@@ -1,0 +1,27 @@
+{
+  "name": "p300speller1",
+  "version": "1.0.0",
+  "description": "ss",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apoorva-02092000/p300speller1.git"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "author": "nil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apoorva-02092000/p300speller1/issues"
+  },
+  "homepage": "https://github.com/apoorva-02092000/p300speller1#readme"
+}
