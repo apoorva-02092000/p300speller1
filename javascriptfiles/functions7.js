@@ -12,7 +12,7 @@ $(document).ready(function() {
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -32,7 +32,7 @@ $(document).ready(function() {
 			var m = d.getMinutes();
 			var s = d.getSeconds();
 			var n = d.getMilliseconds();
-			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the seventh protocol";;
+			var startTime = h + ":" + m + ":" + s + " -- " + "you chose the seventh protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
 			document.getElementById("time").innerHTML = startTime;

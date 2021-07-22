@@ -12,7 +12,7 @@ $(document).ready(function() {
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -103,6 +103,8 @@ $(document).ready(function() {
 				case 6: $(".6").css("color",stim_colour); break;
 				case 7: $(".7").css("color",stim_colour); break;
 				case 8: $(".8").css("color",stim_colour); break;
+				case 9: $(".9").css("color",stim_colour); break;
+				case 10: $(".10").css("color",stim_colour); break;
 				default: 
 				}
 			

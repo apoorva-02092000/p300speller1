@@ -12,7 +12,7 @@ $(document).ready(function() {
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -20,7 +20,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(17);
+					new_chars.unshift(26);
 				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -119,7 +119,16 @@ $(document).ready(function() {
 				case 14: $("#N").css("background-color",stim_colour); break;
 				case 15: $("#O").css("background-color",stim_colour); break;
 				case 16: $("#P").css("background-color",stim_colour); break;
-				case 17: $("#P").css("background-color","grey"); break;
+				case 17: $("#Q").css("background-color",stim_colour); break;
+				case 18: $("#R").css("background-color",stim_colour); break;
+				case 19: $("#S").css("background-color",stim_colour); break;
+				case 20: $("#T").css("background-color",stim_colour); break;
+				case 21: $("#U").css("background-color",stim_colour); break;
+				case 22: $("#V").css("background-color",stim_colour); break;
+				case 23: $("#W").css("background-color",stim_colour); break;
+				case 24: $("#X").css("background-color",stim_colour); break;
+				case 25: $("#Y").css("background-color",stim_colour); break;
+				case 26: $("#Y").css("background-color","grey"); break;
 				default: 
 				}
 			

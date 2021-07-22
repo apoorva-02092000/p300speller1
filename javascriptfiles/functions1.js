@@ -12,12 +12,12 @@ $(document).ready(function() {
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8];
-			new_chars =  [1,3,5,7,2,4,6,8];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10];
+			new_chars =  [1,3,5,6,8,10,2,4,7,9];
 			number_of_trials--;
 			
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,2,4,6,8];
+				temp_chars = [1,3,5,6,8,10,2,4,7,9];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 				document.getElementById("data").innerHTML = new_chars;
@@ -102,6 +102,8 @@ $(document).ready(function() {
 				case 6: $(".6").css("color",stim_colour); break;
 				case 7: $(".7").css("color",stim_colour); break;
 				case 8: $(".8").css("color",stim_colour); break;
+				case 9: $(".9").css("color",stim_colour); break;
+				case 10: $(".10").css("color",stim_colour); break;
 				default: 
 				}
 			
