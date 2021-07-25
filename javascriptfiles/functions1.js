@@ -1,18 +1,25 @@
-$(document).ready(function() {						
-	$("#start1").click( 
-		function() {
+$(document).ready(function() {
+	$("#start1").click(		
+		function(){		
+			console.log("IN first protocol");
+
 			$(".dis").prop('disabled', true);
+			console.log("its running");
 			var flashes = [];
 			var milis = [];
-			const s_color = $("#s-color").val();
-			const ISI = $("#duration_of_stimulus").val();
+			//const s_color = $("#s-color").zval();
+			//const ISI = $("#duration_of_stimulus").val();
+			const s_color = sessionStorage.getItem('s-color');
+			const ISI = sessionStorage.getItem('duration_of_stimulus');
 			const d_s = 100;
 			const time = d_s + ISI;
-			const n_t = $("#number_of_trials").val();
+			const n_t = sessionStorage.getItem('number_of_trials');
+			
+			//const n_t = $("#number_of_trials").val();
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 			new_chars =  [1,3,5,6,8,10,2,4,7,9];
 			number_of_trials--;
 			
@@ -20,7 +27,7 @@ $(document).ready(function() {
 				temp_chars = [1,3,5,6,8,10,2,4,7,9];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-				document.getElementById("data").innerHTML = new_chars;
+				//document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 						
@@ -35,8 +42,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the first protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			document.getElementById("time").innerHTML = startTime;
-			document.getElementById("f_s").innerHTML = firstStimulus;
+			//document.getElementById("time").innerHTML = startTime;
+			//document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
@@ -115,7 +122,7 @@ $(document).ready(function() {
 				// While there remain elements to shuffle...
 				while (0 !== currentIndex) {
 
-					// Pick a remaining element...
+					// Pick a remaining element...char
 					randomIndex = Math.floor(Math.random() * currentIndex);
 					currentIndex -= 1;
 
@@ -127,9 +134,6 @@ $(document).ready(function() {
 
 				return array;
 			}
-					
 		}
-				
 	);
-	
 });

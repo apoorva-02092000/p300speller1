@@ -1,14 +1,16 @@
 $(document).ready(function() {							
 	$("#start2").click( 
 		function() {
+
+			console.log("IN second protocol");
 			$(".dis").prop('disabled', true);
 			var flashes = [];
 			var milis = [];
-			const s_color = $("#s-color").val();
-			const ISI = $("#duration_of_stimulus").val();
+			const s_color = sessionStorage.getItem('s-color');
+			const ISI = sessionStorage.getItem('duration_of_stimulus');
 			const d_s = 100;
 			const time = d_s + ISI;
-			const n_t = $("#number_of_trials").val();
+			const n_t =  sessionStorage.getItem('number_of_trials');
 			
 			number_of_trials = n_t;
 			
@@ -21,7 +23,7 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(17);
-				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 						
@@ -36,8 +38,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the second protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			document.getElementById("time").innerHTML = startTime;
-			document.getElementById("f_s").innerHTML = firstStimulus;
+			//document.getElementById("time").innerHTML = startTime;
+			//document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
