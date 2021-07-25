@@ -14,32 +14,17 @@
 
 
 <body class="container mt-3" >
-	<script>
-		window.onload(){
-			console.log(sessionStorage.getItem('firstProtocol'));
-			console.log(sessionStorage.getItem('secondProtocol'));
-			document.getElementById('start1').style.display = "none";
-			document.getElementById('start2').style.display = "none";
-				 if(sessionStorage.getItem('firstProtocol')){
-					console.log("in 1");
-				 	document.getElementById('start1').style.display = "block";
-					
-				 }
-				 else if(sessionStorage.getItem('secondProtocol'))
-				 {
-					console.log("in 2");
-				 	document.getElementById('start2').style.display = "block";
-				 	
-				 }
 
-		}
-		
-	</script>
 <div class="row">
 	<div class="col-md-6 col-sm-12 mb-3"  id="speller_matrix">
-		<button class="btn btn-outline-primary dis" id="start1">Start</button>
-		<button class="btn btn-outline-primary dis" id="start2">Start</button>
-
+		<button id="start1" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start2" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start3" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start4" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start5" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start6" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start7" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+		<button id="start8" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
 
 <table>
 		<colgroup>
@@ -122,8 +107,6 @@
 	
 	</div>
 
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -138,6 +121,35 @@
 	<script src="functions7.js"></script>
 	<script src="functions8.js"></script>
 	<script src="download.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if(sessionStorage.getItem("firstProtocol") == "true"){
+				document.getElementById("start1").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("secondProtocol") == "true"){
+				document.getElementById("start2").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("thirdProtocol") == "true"){
+				document.getElementById("start3").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("fourthProtocol") == "true"){
+				document.getElementById("start4").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("fifthProtocol") == "true"){
+				document.getElementById("start5").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("sixthProtocol") == "true"){
+				document.getElementById("start6").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("seventhProtocol") == "true"){
+				document.getElementById("start7").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("eighthProtocol") == "true"){
+				document.getElementById("start8").style.visibility = "visible";
+
+			}
+		})
+</script>
 
 </body>
 </html>

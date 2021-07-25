@@ -7,15 +7,12 @@ $(document).ready(function() {
 			console.log("its running");
 			var flashes = [];
 			var milis = [];
-			//const s_color = $("#s-color").zval();
-			//const ISI = $("#duration_of_stimulus").val();
 			const s_color = sessionStorage.getItem('s-color');
 			const ISI = sessionStorage.getItem('duration_of_stimulus');
 			const d_s = 100;
 			const time = d_s + ISI;
 			const n_t = sessionStorage.getItem('number_of_trials');
-			
-			//const n_t = $("#number_of_trials").val();
+
 			
 			number_of_trials = n_t;
 			
