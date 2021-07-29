@@ -1,5 +1,5 @@
-$(document).ready(function() {							
-	$("#start2").click( 
+$(document).ready(function() {
+	$("#start2").click(
 		function() {
 
 			console.log("IN second protocol");
@@ -11,13 +11,13 @@ $(document).ready(function() {
 			const d_s = 100;
 			const time = d_s + ISI;
 			const n_t =  sessionStorage.getItem('number_of_trials');
-			
+
 			number_of_trials = n_t;
-			
+
 			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
 			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,2,4,6,8,10,12,14,16,18,20,22,24];
 			number_of_trials--;
-			
+
 			for(a=0; a<number_of_trials; a++) {
 				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,2,4,6,8,10,12,14,16,18,20,22,24];
 				new_chars = new_chars.concat(temp_chars);
@@ -26,7 +26,7 @@ $(document).ready(function() {
 				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
-						
+
 			c=new_chars.length;
 			i=0;
 			console.log(c)
@@ -42,11 +42,11 @@ $(document).ready(function() {
 			//document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
-			var flash_time = d_s;			
+			var flash_time = d_s;
 			function flash() {
-				
-					
-				if(i<c) {				
+
+
+				if(i<c) {
 					var flash_index = new_chars[i];
 					requestAnimationFrame(() => {
 					light_unlit(flash_index,1); // highlight element
@@ -57,13 +57,13 @@ $(document).ready(function() {
 					//var timer = m + ":" + s;
 					//document.getElementById("timer").innerHTML = timer;
 					var mili_s = m*60*1000+1000*s+n;
-					milis.push(mili_s);		
+					milis.push(mili_s);
 					new_time = (m + "," + s + "," + n);
-					flashes.push(new_time)	
-					})								
+					flashes.push(new_time)
+					})
 					setTimeout(
 						function() {
-							light_unlit(flash_index,0); // revert element to default colour after flash							
+							light_unlit(flash_index,0); // revert element to default colour after flash
 							setTimeout(flash,ISI);
 						}
 					,flash_time);
@@ -71,10 +71,10 @@ $(document).ready(function() {
 					i++;
 						if(i == c+1 && flashes){
 							console.log(flashes);
-							
+
 							let milis1 = milis.slice(1, milis.length);
 							console.log(milis1);
-							
+
 							for(i=0;i<milis1.length;i++){
 							milis1[i] = -milis1[i] + milis1[i+1] - (time) + 99900
 							}
@@ -88,22 +88,22 @@ $(document).ready(function() {
 							flashes.push("Mean Error = " + avg)
 						document.getElementById("data_time").innerHTML = (flashes.slice(1, flashes.length)).join('\r\n');
 						$(".dis").prop('disabled', false);
-					}	
-					
-				
-			
-				
-			
+					}
+
+
+
+
+
 			}
-			// recursive function to keep calling setTimeout until all characters have flashed	
+			// recursive function to keep calling setTimeout until all characters have flashed
 			function light_unlit(char_index,state) {
-				
+
 				if(state==0) {
 					stim_colour = "grey";
 				} else {
 					stim_colour = s_color;
 				}
-				
+
 				switch(char_index) {
 				case 1: $("#A").css("color",stim_colour); break;
 				case 2: $("#B").css("color",stim_colour); break;
@@ -131,11 +131,11 @@ $(document).ready(function() {
 				case 24: $("#X").css("color",stim_colour); break;
 				case 25: $("#Y").css("color",stim_colour); break;
 				case 17: $("#Y").css("color","grey"); break;
-				default: 
+				default:
 				}
-			
+
 			}
-			
+
 			function shuffle(array) {
 				var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -154,9 +154,9 @@ $(document).ready(function() {
 
 				return array;
 			}
-					
+
 		}
-				
+
 	);
-	
+
 });
