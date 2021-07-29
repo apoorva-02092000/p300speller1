@@ -2,17 +2,17 @@ $(document).ready(function() {
 	$("#start4").click( 
 		function() {
 			$(".dis").prop('disabled', true);
+			console.log("its running");
 			var flashes = [];
 			var milis = [];
-			const s_color = $("#s-color").val();
-			const ISI = $("#duration_of_stimulus").val();
-			const d_s = 40;
+			const s_color = sessionStorage.getItem('s-color');
+			const ISI = sessionStorage.getItem('duration_of_stimulus');
+			const d_s = 100;
 			const time = d_s + ISI;
-			const n_t = $("#number_of_trials").val();
-			
+			const n_t = sessionStorage.getItem('number_of_trials');
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -20,8 +20,8 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(26); 
-				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					new_chars.unshift(17);
+				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 						
@@ -36,8 +36,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the fourth protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			document.getElementById("time").innerHTML = startTime;
-			document.getElementById("f_s").innerHTML = firstStimulus;
+			//document.getElementById("time").innerHTML = startTime;
+			//document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
@@ -119,16 +119,7 @@ $(document).ready(function() {
 				case 14: $("#N").css("color",stim_colour); break;
 				case 15: $("#O").css("color",stim_colour); break;
 				case 16: $("#P").css("color",stim_colour); break;
-				case 17: $("#Q").css("color",stim_colour); break;
-				case 18: $("#R").css("color",stim_colour); break;
-				case 19: $("#S").css("color",stim_colour); break;
-				case 20: $("#T").css("color",stim_colour); break;
-				case 21: $("#U").css("color",stim_colour); break;
-				case 22: $("#V").css("color",stim_colour); break;
-				case 23: $("#W").css("color",stim_colour); break;
-				case 24: $("#X").css("color",stim_colour); break;
-				case 25: $("#Y").css("color",stim_colour); break;
-				case 26: $("#Y").css("color","grey"); break;
+				case 17: $("#P").css("color","grey"); break;
 				default: 
 				}
 			

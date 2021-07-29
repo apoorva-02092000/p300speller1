@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#start1").click(		
 		function(){		
-			console.log("IN first protocol");
+			
 
 			$(".dis").prop('disabled', true);
 			console.log("its running");
