@@ -13,7 +13,7 @@ $(document).ready(function() {
 			
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -22,7 +22,7 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(26);
-				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 						
@@ -37,8 +37,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the sixth protocol";
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			//document.getElementById("time").innerHTML = startTime;
-			//document.getElementById("f_s").innerHTML = firstStimulus;
+			document.getElementById("time").innerHTML = startTime;
+			document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
@@ -48,7 +48,7 @@ $(document).ready(function() {
 				if(i<c) {				
 					var flash_index = 10 + new_chars[i];
 					requestAnimationFrame(() => {
-					//light_unlit(flash_index,1); // highlight element
+					light_unlit(flash_index,1); // highlight element
 					$("." + flash_index).toggleClass( s_color );
 					var d = new Date();
 					var m = d.getMinutes();
@@ -61,7 +61,7 @@ $(document).ready(function() {
 					})								
 					setTimeout(
 						function() {
-							//light_unlit(flash_index,0); // revert element to default colour after flash							
+							light_unlit(flash_index,0); // revert element to default colour after flash							
 							$("." + flash_index).toggleClass( s_color );
 							setTimeout(flash,ISI);
 						}
@@ -129,7 +129,18 @@ $(document).ready(function() {
 				case 23: $("#W").css("background-color",stim_colour); break;
 				case 24: $("#X").css("background-color",stim_colour); break;
 				case 25: $("#Y").css("background-color",stim_colour); break;
-				case 26: $("#Y").css("background-color","grey"); break;
+				case 26: $("#Z").css("color",stim_colour); break;
+				case 27: $("#0").css("color",stim_colour); break;
+				case 28: $("#1").css("color",stim_colour); break;
+				case 29: $("#2").css("color",stim_colour); break;
+				case 30: $("#3").css("color",stim_colour); break;
+				case 31: $("#4").css("color",stim_colour); break;
+				case 32: $("#5").css("color",stim_colour); break;
+				case 33: $("#6").css("color",stim_colour); break;
+				case 34: $("#7").css("color",stim_colour); break;
+				case 35: $("#8").css("color",stim_colour); break;
+				case 36: $("#9").css("color",stim_colour); break;
+				case 37: $("#9").css("color","grey"); break;
 				default: 
 				}
 			

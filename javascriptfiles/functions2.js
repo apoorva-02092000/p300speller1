@@ -14,16 +14,16 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
-			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,2,4,6,8,10,12,14,16,18,20,22,24];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
+			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,2,4,6,8,10,12,14,16,18,20,22,24];
+				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(17);
-				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					new_chars.unshift(37);
+					//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 
@@ -38,8 +38,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the second protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			//document.getElementById("time").innerHTML = startTime;
-			//document.getElementById("f_s").innerHTML = firstStimulus;
+			document.getElementById("time").innerHTML = startTime;
+			document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;
@@ -54,8 +54,8 @@ $(document).ready(function() {
 					var m = d.getMinutes();
 					var s = d.getSeconds();
 					var n = d.getMilliseconds();
-					//var timer = m + ":" + s;
-					//document.getElementById("timer").innerHTML = timer;
+					var timer = m + ":" + s;
+					document.getElementById("timer").innerHTML = timer;
 					var mili_s = m*60*1000+1000*s+n;
 					milis.push(mili_s);
 					new_time = (m + "," + s + "," + n);
@@ -95,6 +95,8 @@ $(document).ready(function() {
 
 
 			}
+			var selected_numbers;
+
 			// recursive function to keep calling setTimeout until all characters have flashed
 			function light_unlit(char_index,state) {
 
@@ -103,36 +105,94 @@ $(document).ready(function() {
 				} else {
 					stim_colour = s_color;
 				}
-
-				switch(char_index) {
-				case 1: $("#A").css("color",stim_colour); break;
-				case 2: $("#B").css("color",stim_colour); break;
-				case 3: $("#C").css("color",stim_colour); break;
-				case 4: $("#D").css("color",stim_colour); break;
-				case 5: $("#E").css("color",stim_colour); break;
-				case 6: $("#F").css("color",stim_colour); break;
-				case 7: $("#G").css("color",stim_colour); break;
-				case 8: $("#H").css("color",stim_colour); break;
-				case 9: $("#I").css("color",stim_colour); break;
-				case 10: $("#J").css("color",stim_colour); break;
-				case 11: $("#K").css("color",stim_colour); break;
-				case 12: $("#L").css("color",stim_colour); break;
-				case 13: $("#M").css("color",stim_colour); break;
-				case 14: $("#N").css("color",stim_colour); break;
-				case 15: $("#O").css("color",stim_colour); break;
-				case 16: $("#P").css("color",stim_colour); break;
-				case 17: $("#Q").css("color",stim_colour); break;
-				case 18: $("#R").css("color",stim_colour); break;
-				case 19: $("#S").css("color",stim_colour); break;
-				case 20: $("#T").css("color",stim_colour); break;
-				case 21: $("#U").css("color",stim_colour); break;
-				case 22: $("#V").css("color",stim_colour); break;
-				case 23: $("#W").css("color",stim_colour); break;
-				case 24: $("#X").css("color",stim_colour); break;
-				case 25: $("#Y").css("color",stim_colour); break;
-				case 17: $("#Y").css("color","grey"); break;
-				default:
+				var char;
+				
+				switch(char_index){
+					case 1: char = "A"; break;
+					case 2: char = "B"; break;
+					case 3: char = "C"; break;
+					case 4: char = "D"; break;
+					case 5: char = "E"; break;
+					case 6: char = "F"; break;
+					case 7: char = "G"; break;
+					case 8: char = "H"; break;
+					case 9: char = "I"; break;
+					case 10: char = "J"; break;
+					case 11: char = "K"; break;
+					case 12: char = "L"; break;
+					case 13: char = "M"; break;
+					case 14: char = "N"; break;
+					case 15: char = "O"; break;
+					case 16: char = "P"; break;
+					case 17: char = "Q"; break;
+					case 18: char = "R"; break;
+					case 19: char = "S"; break;
+					case 20: char = "T"; break;
+					case 21: char = "U"; break;
+					case 22: char = "V"; break;
+					case 23: char = "W"; break;
+					case 24: char = "X"; break;
+					case 25: char = "Y"; break;
+					case 26: char = "Z"; break;
+					case 27: char = "0"; break;
+					case 28: char = "1"; break;
+					case 29: char = "2"; break;
+					case 30: char = "3"; break;
+					case 31: char = "4"; break;
+					case 32: char = "5"; break;
+					case 33: char = "6"; break;
+					case 34: char = "7"; break;
+					case 35: char = "8"; break;
+					case 36: char = "9"; break;
+					case 37: char = "9"; break;
 				}
+				//selected_numbers += char;
+				console.log("it ran eyes")
+				if(state == 1){
+					document.getElementById("data").innerHTML += char;
+				}
+				
+				$("#" + char).css("color", stim_colour);
+				// switch(char_index) {
+				// case 1: $("#A").css("color",stim_colour); break;
+				// case 2: $("#B").css("color",stim_colour); break;
+				// case 3: $("#C").css("color",stim_colour); break;
+				// case 4: $("#D").css("color",stim_colour); break;
+				// case 5: $("#E").css("color",stim_colour); break;
+				// case 6: $("#F").css("color",stim_colour); break;
+				// case 7: $("#G").css("color",stim_colour); break;
+				// case 8: $("#H").css("color",stim_colour); break;
+				// case 9: $("#I").css("color",stim_colour); break;
+				// case 10: $("#J").css("color",stim_colour); break;
+				// case 11: $("#K").css("color",stim_colour); break;
+				// case 12: $("#L").css("color",stim_colour); break;
+				// case 13: $("#M").css("color",stim_colour); break;
+				// case 14: $("#N").css("color",stim_colour); break;
+				// case 15: $("#O").css("color",stim_colour); break;
+				// case 16: $("#P").css("color",stim_colour); break;
+				// case 17: $("#Q").css("color",stim_colour); break;
+				// case 18: $("#R").css("color",stim_colour); break;
+				// case 19: $("#S").css("color",stim_colour); break;
+				// case 20: $("#T").css("color",stim_colour); break;
+				// case 21: $("#U").css("color",stim_colour); break;
+				// case 22: $("#V").css("color",stim_colour); break;
+				// case 23: $("#W").css("color",stim_colour); break;
+				// case 24: $("#X").css("color",stim_colour); break;
+				// case 25: $("#Y").css("color",stim_colour); break;
+				// case 26: $("#Z").css("color",stim_colour); break;
+				// case 27: $("#0").css("color",stim_colour); break;
+				// case 28: $("#1").css("color",stim_colour); break;
+				// case 29: $("#2").css("color",stim_colour); break;
+				// case 30: $("#3").css("color",stim_colour); break;
+				// case 31: $("#4").css("color",stim_colour); break;
+				// case 32: $("#5").css("color",stim_colour); break;
+				// case 33: $("#6").css("color",stim_colour); break;
+				// case 34: $("#7").css("color",stim_colour); break;
+				// case 35: $("#8").css("color",stim_colour); break;
+				// case 36: $("#9").css("color",stim_colour); break;
+				// case 37: $("#9").css("color","grey"); break;
+				// default:
+				// }
 
 			}
 

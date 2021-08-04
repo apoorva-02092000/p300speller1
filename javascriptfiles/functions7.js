@@ -37,8 +37,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you chose the seventh protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			//document.getElementById("time").innerHTML = startTime;
-			//document.getElementById("f_s").innerHTML = firstStimulus;
+			document.getElementById("time").innerHTML = startTime;
+			document.getElementById("f_s").innerHTML = firstStimulus;
 			console.log("flashing bita")
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts

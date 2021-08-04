@@ -23,7 +23,7 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(37);
-				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 
@@ -38,8 +38,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the eighth protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			//document.getElementById("time").innerHTML = startTime;
-			//document.getElementById("f_s").innerHTML = firstStimulus;
+			document.getElementById("time").innerHTML = startTime;
+			document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			function flash() {

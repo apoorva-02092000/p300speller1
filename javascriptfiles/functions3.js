@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -21,7 +21,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-				//document.getElementById("data").innerHTML = new_chars;
+				document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 						
@@ -36,8 +36,8 @@ $(document).ready(function() {
 			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the third protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			//document.getElementById("time").innerHTML = startTime;
-			//document.getElementById("f_s").innerHTML = firstStimulus;
+			document.getElementById("time").innerHTML = startTime;
+			document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
@@ -52,8 +52,8 @@ $(document).ready(function() {
 					var m = d.getMinutes();
 					var s = d.getSeconds();
 					var n = d.getMilliseconds();
-					//var timer = m + ":" + s;
-					//document.getElementById("timer").innerHTML = timer;
+					var timer = m + ":" + s;
+					document.getElementById("timer").innerHTML = timer;
 					var mili_s = m*60*1000+1000*s+n;
 					milis.push(mili_s);	
 					new_time = (m + "," + s + "," + n);
@@ -104,6 +104,10 @@ $(document).ready(function() {
 				case 6: $(".6").css("color",stim_colour); break;
 				case 7: $(".7").css("color",stim_colour); break;
 				case 8: $(".8").css("color",stim_colour); break;
+				case 9: $(".9").css("color",stim_colour); break;
+				case 10: $(".10").css("color",stim_colour); break;
+				case 11: $(".11").css("color",stim_colour); break;
+				case 12: $(".12").css("color",stim_colour); break;
 				default: 
 				}
 			
