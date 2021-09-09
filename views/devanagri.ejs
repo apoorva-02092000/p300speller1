@@ -14,7 +14,15 @@
 	
 	<body class="container mt-3">
 	<div class="row">
-	<div class="col-md-6 col-sm-12 mb-3"  id="speller_matrix">
+		<div class="col-md-6 col-sm-12 mb-3"  id="speller_matrix">
+			<button id="start1" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start2" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start3" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start4" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start5" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start6" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start7" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
+			<button id="start8" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
 	
 	<table>
 		<colgroup>
@@ -122,73 +130,11 @@
 		
 
 	</table>
-	<div class="changeback">
-		<a href="/">Go to English</a>
-	</div>
 	
 	</div>
-	<div class="col-md-6 col-sm-12">
-	<div class="n_t">
-	<label for="trials">Enter the number of trials, please!</label>
-	<select name="select" id="number_of_trials">
-	<option value="2">2</option> 
-	<option value="5">5</option> 
-	<option value="6">6</option>
-	<option value="7">7</option>
-	<option value="8">8</option> 
-	<option value="9">9</option>
-	<option value="10" selected>10</option>
-	<option value="11">11</option>
-	<option value="12">12</option>
-	<option value="13">13</option> 
-	<option value="14">14</option>
-	<option value="15">15</option>
-	<option value="16">16</option>
-	<option value="17">17</option>
-	<option value="18">18</option>
-	<option value="19">19</option> 
-	<option value="20">20</option>
-	<option value="25">25</option>
-	<option value="30">30</option>
-	</select>
 	</div>
-	<div class="d_s">
-	<label for="trials">Choose the value of stimulation frequency, please!</label>
-	<select name="select" id="duration_of_stimulus">
-	<option value="980">1 Hz</option>
-	<option value="480">2 Hz</option>
-	<option value="313">3 Hz</option>
-	<option value="230" selected>4 Hz</option>
-	<option value="180">5 Hz</option> 
-	</select>
-	</div>
-	<div class="d_s">
-	<label for="trials">Choose the color of stimulus, please!</label>
-	<select name="select" id="s-color">
-	<option value="blue">blue</option> 
-	<option value="white" selected>white</option> 
-	<option value="red">red</option>
-	<option value="green">green</option>
-	<option value="yellow">yellow</option> 
-	</select>
-	</div>
-	<div class="b_s">
-		<button class="btn btn-outline-primary dis" id="start1">First Protocol</button>
-		<button class="btn btn-primary dis" id="start2">Second Protocol</button>
-	<div class="mt">For random order use the protocols below</div>
-	<div class="mt">
-		<button class="btn btn-outline-primary dis" id="start3">Third Protocol</button>
-		<button class="btn btn-primary dis" id="start4">Fourth Protocol</button>
-	</div>
-	<div class="mt">For background flashing use the protocols below</div>
-	<div class="mt">
-		<button class="btn btn-outline-primary dis" id="start5">fifth Protocol</button>
-		<button class="btn btn-primary dis" id="start6">sixth Protocol</button>
-	</div>
-	<div class="mt">
-		<button class="btn btn-outline-primary dis" id="start7">seventh Protocol</button>
-		<button class="btn btn-primary dis" id="start8">eighth Protocol</button>
-	</div>
+
+	
 		<p class="mt-2">Start Time:<span id="time"></span></p>
 		<p class="d-none ">First Stimulus:<span id="f_s"></span></p>
 		<button class="btn btn-outline-success mt-1" id="showData">Show selected numbers</button>
@@ -198,42 +144,34 @@
 		</div>
 		<div class="numbers">
 		<p id="data_time" class="mt showMe"></p>
-		</div>
-				
+		<button onclick="
+	
+		var backspace=document.getElementById('data').innerHTML;
+		document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1);
 
-		<button class="btn btn-outline-success mt-2" id="showDoc">Show documentation</button>
-		<div class="numbers">
-		<div id="doc" class="mt showMe">
-		<ul>For the first, third, fifth and seventh protocols ... 
-			<li>1 = first row</li> 
-			<li>2 = second row</li>
-			<li>3 = third row</li>
-			<li>4 = fourth row</li>
-			<li>5 = fifth row</li>
-			<li>6 = sixth row</li>
-			<li>7 = seventh row</li>
-			<li>8 = eighth row</li>
+		">Back</button>
+		<button
+		onclick="
 
-			<li>9 = first column</li> 
-			<li>10 = second column</li>
-			<li>11 = third column</li>
-			<li>12 = fourth column</li>
-			<li>13 = fifth column</li>
-			<li>14 = sixth column</li>
-			<li>15 = seventh column</li>
-			<li>16 = eighth column</li>
+		var del = document.getElementById('data');
+		del.remove();
 
-		</ul>
-		<ul>For the second, fourth, sixth and eighth protocols ... 
-			<li>We start counting from the letter अ(number 1) to the specialcharacter : (number 64)</li> 
-		</ul>
-		</div>
-		</div>
-	</div>
-	</div>
+
+		"
+		>
+			Delete
+		</button>
+
 		</div>
 
 	
+
+
+
+		
+				
+
+		
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -241,7 +179,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 	
-	<script src="functions1.js"></script>
+	<script src="func1.js"></script>
 	<script src="functions2.js"></script>
 	<script src="functions3.js"></script>
 	<script src="functions4.js"></script>
@@ -249,7 +187,37 @@
 	<script src="functions6.js"></script>
 	<script src="functions7.js"></script>
 	<script src="functions8.js"></script>
-	<script src="download.js"></script>
+	<script src="download1.js"></script>
+	<script type="text/javascript">
+	   $(document).ready(function(){
+			if(sessionStorage.getItem("firstProtocol") == "true"){
+				document.getElementById("start1").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("secondProtocol") == "true"){
+				document.getElementById("start2").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("thirdProtocol") == "true"){
+				document.getElementById("start3").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("fourthProtocol") == "true"){
+				document.getElementById("start4").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("fifthProtocol") == "true"){
+				document.getElementById("start5").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("sixthProtocol") == "true"){
+				document.getElementById("start6").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("seventhProtocol") == "true"){
+				document.getElementById("start7").style.visibility = "visible";
+
+			}else if(sessionStorage.getItem("eighthProtocol") == "true"){
+				console.log("yo")
+				document.getElementById("start8").style.visibility = "visible";
+
+			}
+		})
+	</script>
 	  	
 
 	</body>

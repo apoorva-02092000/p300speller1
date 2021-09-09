@@ -1,6 +1,8 @@
-const express = require('express'); 
+const express = require('express'); //USING EXPRESS SERVER,THE SERVER USED FOR NODE.JS
 const app = express();
 const session=require('express-session');
+
+
 
 app.use(express.static('public'));
 app.use(express.static('javascriptfiles'));
@@ -28,7 +30,11 @@ app.get('/english', (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 3000);
+//app.listen(process.env.PORT || 3000);
+
+app.listen(3000, '0.0.0.0', function() {
+  console.log('Listening to port:  ' + 3000);
+});
 
 
 

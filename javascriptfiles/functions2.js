@@ -153,46 +153,6 @@ $(document).ready(function() {
 				}
 				
 				$("#" + char).css("color", stim_colour);
-				// switch(char_index) {
-				// case 1: $("#A").css("color",stim_colour); break;
-				// case 2: $("#B").css("color",stim_colour); break;
-				// case 3: $("#C").css("color",stim_colour); break;
-				// case 4: $("#D").css("color",stim_colour); break;
-				// case 5: $("#E").css("color",stim_colour); break;
-				// case 6: $("#F").css("color",stim_colour); break;
-				// case 7: $("#G").css("color",stim_colour); break;
-				// case 8: $("#H").css("color",stim_colour); break;
-				// case 9: $("#I").css("color",stim_colour); break;
-				// case 10: $("#J").css("color",stim_colour); break;
-				// case 11: $("#K").css("color",stim_colour); break;
-				// case 12: $("#L").css("color",stim_colour); break;
-				// case 13: $("#M").css("color",stim_colour); break;
-				// case 14: $("#N").css("color",stim_colour); break;
-				// case 15: $("#O").css("color",stim_colour); break;
-				// case 16: $("#P").css("color",stim_colour); break;
-				// case 17: $("#Q").css("color",stim_colour); break;
-				// case 18: $("#R").css("color",stim_colour); break;
-				// case 19: $("#S").css("color",stim_colour); break;
-				// case 20: $("#T").css("color",stim_colour); break;
-				// case 21: $("#U").css("color",stim_colour); break;
-				// case 22: $("#V").css("color",stim_colour); break;
-				// case 23: $("#W").css("color",stim_colour); break;
-				// case 24: $("#X").css("color",stim_colour); break;
-				// case 25: $("#Y").css("color",stim_colour); break;
-				// case 26: $("#Z").css("color",stim_colour); break;
-				// case 27: $("#0").css("color",stim_colour); break;
-				// case 28: $("#1").css("color",stim_colour); break;
-				// case 29: $("#2").css("color",stim_colour); break;
-				// case 30: $("#3").css("color",stim_colour); break;
-				// case 31: $("#4").css("color",stim_colour); break;
-				// case 32: $("#5").css("color",stim_colour); break;
-				// case 33: $("#6").css("color",stim_colour); break;
-				// case 34: $("#7").css("color",stim_colour); break;
-				// case 35: $("#8").css("color",stim_colour); break;
-				// case 36: $("#9").css("color",stim_colour); break;
-				// case 37: $("#9").css("color","grey"); break;
-				// default:
-				// }
 
 			}
 
@@ -214,6 +174,8 @@ $(document).ready(function() {
 
 				return array;
 			}
+
+			
 
 		}
 

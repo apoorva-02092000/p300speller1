@@ -112,6 +112,8 @@ $(document).ready(function() {
 				case 10: $(".10").css("color",stim_colour); break;
 				case 11: $(".11").css("color",stim_colour); break;
 				case 12: $(".12").css("color",stim_colour); break;
+				
+
 				default: 
 				}
 			

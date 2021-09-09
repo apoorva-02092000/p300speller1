@@ -136,6 +136,27 @@
 			">Go To English Matrix</button>
 		</div>
 
+		<div>
+			<!-- <a href="/english">Go to matrix</a> -->
+			<button onclick="
+				sessionStorage.setItem('number_of_trials', $('#number_of_trials').val());
+				console.log($('#duration_of_stimulus').val());
+				sessionStorage.setItem('duration_of_stimulus',$('#duration_of_stimulus').val());
+				sessionStorage.setItem('s-color',  $('#s-color').val());
+				sessionStorage.setItem('firstProtocol', firstProtocol);
+				sessionStorage.setItem('secondProtocol', secondProtocol);
+				sessionStorage.setItem('thirdProtocol', thirdProtocol);
+				sessionStorage.setItem('fourthProtocol', fourthProtocol);
+				sessionStorage.setItem('fifthProtocol', fifthProtocol);
+				sessionStorage.setItem('sixthProtocol', sixthProtocol);
+				sessionStorage.setItem('seventhProtocol', seventhProtocol);
+				sessionStorage.setItem('eighthProtocol', eighthProtocol);
+
+				window.open('/devanagri', '_self');
+			">Go To Hindi Matrix</button>
+		</div>
+
+
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -145,6 +166,7 @@
 
 
 	<script src="functions1.js"></script>
+	<script src="func1.js"></script>
 	<script src="functions2.js"></script>
 	<script src="functions3.js"></script>
 	<script src="functions4.js"></script>
@@ -153,6 +175,7 @@
 	<script src="functions7.js"></script>
 	<script src="functions8.js"></script>
 	<script src="download.js"></script>
+	<script src="download1.js"></script>
 
 
 	</body>
