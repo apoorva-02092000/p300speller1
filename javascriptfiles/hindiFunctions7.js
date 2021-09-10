@@ -44,7 +44,7 @@ $(document).ready(function() {
 			function flash() {
 				count=0;
 				var x=setInterval(function(){
-					console.log("eyes")
+					//console.log("eyes")
   				var flash_index = new_chars[count];
   				requestAnimationFrame(() => {
   				$("." + flash_index).toggleClass( s_color );
