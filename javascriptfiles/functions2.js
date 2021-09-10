@@ -145,9 +145,10 @@ $(document).ready(function() {
 					case 35: char = "8"; break;
 					case 36: char = "9"; break;
 					case 37: char = "9"; break;
+					
+
 				}
 				//selected_numbers += char;
-				console.log("it ran eyes")
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}

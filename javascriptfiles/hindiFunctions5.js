@@ -1,8 +1,6 @@
-$(document).ready(function() {
-	$("#start1").click(		
-		function(){		
-			
-
+$(document).ready(function() {							
+	$("#start5").click( 
+		function() {
 			$(".dis").prop('disabled', true);
 			console.log("its running");
 			var flashes = [];
@@ -12,21 +10,17 @@ $(document).ready(function() {
 			const d_s = 100;
 			const time = d_s + ISI;
 			const n_t = sessionStorage.getItem('number_of_trials');
-
-			
-
-			
+		
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12]; 
-			new_chars =  [1,3,5,7,9,11,2,4,6,8,10,12];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars = [1,3,5,7,9,11,2,4,6,8,10,12];
+				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					//document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 						
@@ -38,7 +32,7 @@ $(document).ready(function() {
 			var m = d.getMinutes();
 			var s = d.getSeconds();
 			var n = d.getMilliseconds();
-			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the first protocol";;
+			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the fifth protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
 			document.getElementById("time").innerHTML = startTime;
@@ -91,35 +85,31 @@ $(document).ready(function() {
 			
 			}
 			// recursive function to keep calling setTimeout until all characters have flashed	
-			function light_unlit(char_index,state) {
-				
-				if(state==0) {
-					stim_colour = "grey";
-				} else {
-					stim_colour = s_color;
-				}
+			function light_unlit(char_index, state) {
 				
 				switch(char_index) {
-				case 1: $(".1").css("color",stim_colour); break;
-				case 2: $(".2").css("color",stim_colour); break;
-				case 3: $(".3").css("color",stim_colour); break;
-				case 4: $(".4").css("color",stim_colour); break;
-				case 5: $(".5").css("color",stim_colour); break;
-				case 6: $(".6").css("color",stim_colour); break;
-				case 7: $(".7").css("color",stim_colour); break;
-				case 8: $(".8").css("color",stim_colour); break;
-				case 9: $(".9").css("color",stim_colour); break;
-				case 10: $(".10").css("color",stim_colour); break;
-				case 11: $(".11").css("color",stim_colour); break;
-				case 12: $(".12").css("color",stim_colour); break'
-			
+				case 1: $(".a1").toggleClass( s_color ); break;
+				case 2: $(".a2").toggleClass( s_color ); break;
+				case 3: $(".a3").toggleClass( s_color ); break;
+				case 4: $(".a4").toggleClass( s_color ); break;
+				case 5: $(".a5").toggleClass( s_color ); break;
+				case 6: $(".a6").toggleClass( s_color ); break;
+				case 7: $(".a7").toggleClass( s_color ); break;
+				case 8: $(".a8").toggleClass( s_color ); break;
+				case 9: $(".a9").toggleClass( s_color ); break;
+				case 10: $(".a10").toggleClass( s_color ); break;
+				case 11: $(".a11").toggleClass( s_color ); break;
+				case 12: $(".a12").toggleClass( s_color ); break;
+                case 13: $(".a13").toggleClass( s_color ); break;
+                case 14: $(".a14").toggleClass( s_color ); break;
+                case 15: $(".a15").toggleClass( s_color ); break;
+                case 16: $(".a16").toggleClass( s_color ); break;
 				default: 
 				}
 
 				if(state == 1){
 					document.getElementById("data").innerHTML += char_index + ',';
 				}
-				
 			
 			}
 			
@@ -129,7 +119,7 @@ $(document).ready(function() {
 				// While there remain elements to shuffle...
 				while (0 !== currentIndex) {
 
-					// Pick a remaining element...char
+					// Pick a remaining element...
 					randomIndex = Math.floor(Math.random() * currentIndex);
 					currentIndex -= 1;
 
@@ -141,6 +131,9 @@ $(document).ready(function() {
 
 				return array;
 			}
+					
 		}
+				
 	);
+	
 });

@@ -120,6 +120,10 @@ $(document).ready(function() {
 
 				default: 
 				}
+
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ',';
+				}
 			
 			}
 			

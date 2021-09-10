@@ -86,7 +86,7 @@ $(document).ready(function() {
 			
 			}
 			// recursive function to keep calling setTimeout until all characters have flashed	
-			function light_unlit(char_index) {
+			function light_unlit(char_index, state) {
 				
 				switch(char_index) {
 				case 1: $(".a1").toggleClass( s_color ); break;
@@ -102,6 +102,9 @@ $(document).ready(function() {
 				case 11: $(".a11").toggleClass( s_color ); break;
 				case 12: $(".a12").toggleClass( s_color ); break;
 				default: 
+				}
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ',';
 				}
 			
 			}

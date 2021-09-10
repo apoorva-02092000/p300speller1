@@ -22,7 +22,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-				//document.getElementById("data").innerHTML = new_chars;
+					document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 
@@ -39,13 +39,11 @@ $(document).ready(function() {
 			var firstStimulus = m + ":" + fix_s;
 			document.getElementById("time").innerHTML = startTime;
 			document.getElementById("f_s").innerHTML = firstStimulus;
-			console.log("flashing bita")
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			function flash() {
 				count=0;
 				var x=setInterval(function(){
-					console.log("eyes")
   				var flash_index = new_chars[count];
   				requestAnimationFrame(() => {
   				$("." + flash_index).toggleClass( s_color );
