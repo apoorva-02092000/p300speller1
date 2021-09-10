@@ -6,11 +6,14 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "express-session": "^1.17.2"
+    "express-session": "^1.17.2",
+    "netlify-lambda": "^2.0.14",
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "hello"
+    "start":"./node_modules/.bin/netlify-lambda serve src",
+    "build":"./node_modules/.bin/netlify-lambda build src"
   },
   "repository": {
     "type": "git",
