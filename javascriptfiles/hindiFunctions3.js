@@ -114,6 +114,10 @@ $(document).ready(function() {
                 case 16: $(".16").css("color",stim_colour); break
 				default: 
 				}
+
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ",";
+				}
 			
 			}
 			

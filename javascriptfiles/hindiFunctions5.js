@@ -21,7 +21,6 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-				document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 						
@@ -86,7 +85,7 @@ $(document).ready(function() {
 			
 			}
 			// recursive function to keep calling setTimeout until all characters have flashed	
-			function light_unlit(char_index) {
+			function light_unlit(char_index, state) {
 				
 				switch(char_index) {
 				case 1: $(".a1").toggleClass( s_color ); break;
@@ -106,6 +105,10 @@ $(document).ready(function() {
                 case 15: $(".a15").toggleClass( s_color ); break;
                 case 16: $(".a16").toggleClass( s_color ); break;
 				default: 
+				}
+
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ',';
 				}
 			
 			}

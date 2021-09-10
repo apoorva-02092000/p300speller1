@@ -23,7 +23,9 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(26);
-				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					document.getElementById("data").innerHTML = new_chars;
+
+				
 				}
 			}
 						
@@ -49,7 +51,7 @@ $(document).ready(function() {
 				if(i<c) {				
 					var flash_index = 10 + new_chars[i];
 					requestAnimationFrame(() => {
-					light_unlit(flash_index,1); // highlight element
+					//light_unlit(flash_index,1); // highlight element
 					$("." + flash_index).toggleClass( s_color );
 					var d = new Date();
 					var m = d.getMinutes();
@@ -62,7 +64,7 @@ $(document).ready(function() {
 					})								
 					setTimeout(
 						function() {
-							light_unlit(flash_index,0); // revert element to default colour after flash							
+							//light_unlit(flash_index,0); // revert element to default colour after flash							
 							$("." + flash_index).toggleClass( s_color );
 							setTimeout(flash,ISI);
 						}
@@ -103,7 +105,56 @@ $(document).ready(function() {
 				} else {
 					stim_colour = s_color;
 				}
+				// var char;
 				
+				// switch(char_index){
+				// 	case 1: char = "A"; break;
+				// 	case 2: char = "B"; break;
+				// 	case 3: char = "C"; break;
+				// 	case 4: char = "D"; break;
+				// 	case 5: char = "E"; break;
+				// 	case 6: char = "F"; break;
+				// 	case 7: char = "G"; break;
+				// 	case 8: char = "H"; break;
+				// 	case 9: char = "I"; break;
+				// 	case 10: char = "J"; break;
+				// 	case 11: char = "K"; break;
+				// 	case 12: char = "L"; break;
+				// 	case 13: char = "M"; break;
+				// 	case 14: char = "N"; break;
+				// 	case 15: char = "O"; break;
+				// 	case 16: char = "P"; break;
+				// 	case 17: char = "Q"; break;
+				// 	case 18: char = "R"; break;
+				// 	case 19: char = "S"; break;
+				// 	case 20: char = "T"; break;
+				// 	case 21: char = "U"; break;
+				// 	case 22: char = "V"; break;
+				// 	case 23: char = "W"; break;
+				// 	case 24: char = "X"; break;
+				// 	case 25: char = "Y"; break;
+				// 	case 26: char = "Z"; break;
+				// 	case 27: char = "0"; break;
+				// 	case 28: char = "1"; break;
+				// 	case 29: char = "2"; break;
+				// 	case 30: char = "3"; break;
+				// 	case 31: char = "4"; break;
+				// 	case 32: char = "5"; break;
+				// 	case 33: char = "6"; break;
+				// 	case 34: char = "7"; break;
+				// 	case 35: char = "8"; break;
+				// 	case 36: char = "9"; break;
+				// 	case 37: char = "9"; break;
+				// }
+				// if(state == 1){
+				// 	document.getElementById("data").innerHTML += char;
+				// }
+				
+				// if(isNaN(char)){
+				// 	$("#"+ char).css("background-color", stim_colour);
+				// }else{
+				// 	$("#"+ char).css("color", stim_colour);
+				// }
 				switch(char_index) {
 				case 1: $("#A").css("background-color",stim_colour); break;
 				case 2: $("#B").css("background-color",stim_colour); break;

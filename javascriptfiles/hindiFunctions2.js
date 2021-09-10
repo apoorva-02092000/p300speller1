@@ -108,7 +108,7 @@ $(document).ready(function() {
 				var char;
 				
 				switch(char_index){
-					case 1: char = "A"; break;
+					case 1: char = "आ "; break;
 					case 2: char = "B"; break;
 					case 3: char = "C"; break;
 					case 4: char = "D"; break;
@@ -145,36 +145,35 @@ $(document).ready(function() {
 					case 35: char = "8"; break;
 					case 36: char = "9"; break;
 					case 37: char = "9"; break;
-                    case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
-					case 37: char = "9"; break;
+                    case 38: char = "9"; break;
+					case 39: char = "9"; break;
+					case 40: char = "9"; break;
+					case 41: char = "9"; break;
+					case 42: char = "9"; break;
+					case 43: char = "9"; break;
+					case 44: char = "9"; break;
+					case 45: char = "9"; break;
+					case 46: char = "9"; break;
+					case 47: char = "9"; break;
+					case 48: char = "9"; break;
+					case 49: char = "9"; break;
+					case 50: char = "9"; break;
+					case 51: char = "9"; break;
+					case 52: char = "9"; break;
+					case 53: char = "9"; break;
+					case 54: char = "9"; break;
+					case 55: char = "9"; break;
+					case 56: char = "9"; break;
+					case 57: char = "9"; break;
+					case 58: char = "9"; break;
+					case 59: char = "9"; break;
+					case 60: char = "9"; break;
+					case 61: char = "9"; break;
+					case 62: char = "9"; break;
+					case 63: char = "9"; break;
+					case 64: char = "9"; break;
 				}
-				//selected_numbers += char;
-				console.log("it ran eyes")
+				//selected_numbers += char;				
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}

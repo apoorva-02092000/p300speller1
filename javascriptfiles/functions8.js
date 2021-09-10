@@ -23,7 +23,7 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(37);
-				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 
@@ -82,7 +82,9 @@ $(document).ready(function() {
   				count++;
 				}, time);
 			}
+			function light_unlit(char_index, state) {
 
+			}
 			function shuffle(array) {
 				var currentIndex = array.length, temporaryValue, randomIndex;
 

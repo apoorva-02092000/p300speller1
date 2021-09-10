@@ -110,6 +110,11 @@ $(document).ready(function() {
 				case 12: $(".12").css("color",stim_colour); break;
 				default: 
 				}
+
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ",";
+				}
+				
 			
 			}
 			

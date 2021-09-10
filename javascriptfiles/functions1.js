@@ -111,11 +111,15 @@ $(document).ready(function() {
 				case 9: $(".9").css("color",stim_colour); break;
 				case 10: $(".10").css("color",stim_colour); break;
 				case 11: $(".11").css("color",stim_colour); break;
-				case 12: $(".12").css("color",stim_colour); break;
-				
-
+				case 12: $(".12").css("color",stim_colour); break'
+			
 				default: 
 				}
+
+				if(state == 1){
+					document.getElementById("data").innerHTML += char_index + ',';
+				}
+				
 			
 			}
 			

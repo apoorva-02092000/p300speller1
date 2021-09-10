@@ -22,7 +22,8 @@ $(document).ready(function() {
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(26);
-				document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					document.getElementById("data").innerHTML = new_chars;
+
 				}
 			}
 						
@@ -48,7 +49,7 @@ $(document).ready(function() {
 				if(i<c) {				
 					var flash_index = 10 + new_chars[i];
 					requestAnimationFrame(() => {
-					light_unlit(flash_index,1); // highlight element
+					//light_unlit(flash_index,1); // highlight element
 					$("." + flash_index).toggleClass( s_color );
 					var d = new Date();
 					var m = d.getMinutes();
@@ -61,7 +62,7 @@ $(document).ready(function() {
 					})								
 					setTimeout(
 						function() {
-							light_unlit(flash_index,0); // revert element to default colour after flash							
+							//light_unlit(flash_index,0); // revert element to default colour after flash							
 							$("." + flash_index).toggleClass( s_color );
 							setTimeout(flash,ISI);
 						}
@@ -102,48 +103,57 @@ $(document).ready(function() {
 				} else {
 					stim_colour = s_color;
 				}
+				var char;
 				
-				switch(char_index) {
-				case 1: $("#A").css("background-color",stim_colour); break;
-				case 2: $("#B").css("background-color",stim_colour); break;
-				case 3: $("#C").css("background-color",stim_colour); break;
-				case 4: $("#D").css("background-color",stim_colour); break;
-				case 5: $("#E").css("background-color",stim_colour); break;
-				case 6: $("#F").css("background-color",stim_colour); break;
-				case 7: $("#G").css("background-color",stim_colour); break;
-				case 8: $("#H").css("background-color",stim_colour); break;
-				case 9: $("#I").css("background-color",stim_colour); break;
-				case 10: $("#J").css("background-color",stim_colour); break;
-				case 11: $("#K").css("background-color",stim_colour); break;
-				case 12: $("#L").css("background-color",stim_colour); break;
-				case 13: $("#M").css("background-color",stim_colour); break;
-				case 14: $("#N").css("background-color",stim_colour); break;
-				case 15: $("#O").css("background-color",stim_colour); break;
-				case 16: $("#P").css("background-color",stim_colour); break;
-				case 17: $("#Q").css("background-color",stim_colour); break;
-				case 18: $("#R").css("background-color",stim_colour); break;
-				case 19: $("#S").css("background-color",stim_colour); break;
-				case 20: $("#T").css("background-color",stim_colour); break;
-				case 21: $("#U").css("background-color",stim_colour); break;
-				case 22: $("#V").css("background-color",stim_colour); break;
-				case 23: $("#W").css("background-color",stim_colour); break;
-				case 24: $("#X").css("background-color",stim_colour); break;
-				case 25: $("#Y").css("background-color",stim_colour); break;
-				case 26: $("#Z").css("color",stim_colour); break;
-				case 27: $("#0").css("color",stim_colour); break;
-				case 28: $("#1").css("color",stim_colour); break;
-				case 29: $("#2").css("color",stim_colour); break;
-				case 30: $("#3").css("color",stim_colour); break;
-				case 31: $("#4").css("color",stim_colour); break;
-				case 32: $("#5").css("color",stim_colour); break;
-				case 33: $("#6").css("color",stim_colour); break;
-				case 34: $("#7").css("color",stim_colour); break;
-				case 35: $("#8").css("color",stim_colour); break;
-				case 36: $("#9").css("color",stim_colour); break;
-				case 37: $("#9").css("color","grey"); break;
-				default: 
+				switch(char_index){
+					case 1: char = "A"; break;
+					case 2: char = "B"; break;
+					case 3: char = "C"; break;
+					case 4: char = "D"; break;
+					case 5: char = "E"; break;
+					case 6: char = "F"; break;
+					case 7: char = "G"; break;
+					case 8: char = "H"; break;
+					case 9: char = "I"; break;
+					case 10: char = "J"; break;
+					case 11: char = "K"; break;
+					case 12: char = "L"; break;
+					case 13: char = "M"; break;
+					case 14: char = "N"; break;
+					case 15: char = "O"; break;
+					case 16: char = "P"; break;
+					case 17: char = "Q"; break;
+					case 18: char = "R"; break;
+					case 19: char = "S"; break;
+					case 20: char = "T"; break;
+					case 21: char = "U"; break;
+					case 22: char = "V"; break;
+					case 23: char = "W"; break;
+					case 24: char = "X"; break;
+					case 25: char = "Y"; break;
+					case 26: char = "Z"; break;
+					case 27: char = "0"; break;
+					case 28: char = "1"; break;
+					case 29: char = "2"; break;
+					case 30: char = "3"; break;
+					case 31: char = "4"; break;
+					case 32: char = "5"; break;
+					case 33: char = "6"; break;
+					case 34: char = "7"; break;
+					case 35: char = "8"; break;
+					case 36: char = "9"; break;
+					case 37: char = "9"; break;
 				}
-			
+				if(state == 1){
+					document.getElementById("data").innerHTML += char;
+				}
+				
+				if(isNaN(char)){
+					$("#"+ char).css("background-color", stim_colour);
+				}else{
+					$("#"+ char).css("color", stim_colour);
+				}
+				
 			}
 			
 			function shuffle(array) {

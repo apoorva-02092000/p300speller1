@@ -149,7 +149,6 @@ $(document).ready(function() {
 
 				}
 				//selected_numbers += char;
-				console.log("it ran eyes")
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}
