@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	sessionStorage.setItem("stop", false);
 								
 	$("#showData").click( 
 		function() {

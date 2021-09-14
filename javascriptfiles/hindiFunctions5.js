@@ -42,6 +42,8 @@ $(document).ready(function() {
 			var flash_time = d_s;			
 			function flash() {
 				
+				if(sessionStorage.getItem("stop") === "false")
+				{
 					
 				if(i<c) {				
 					var flash_index = new_chars[i];
@@ -81,7 +83,7 @@ $(document).ready(function() {
 				$(".dis").prop('disabled', false);
 					}
 				
-			
+				}
 			
 			}
 			// recursive function to keep calling setTimeout until all characters have flashed	

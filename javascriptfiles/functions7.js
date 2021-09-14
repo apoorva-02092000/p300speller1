@@ -42,6 +42,10 @@ $(document).ready(function() {
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			function flash() {
+
+				if(sessionStorage.getItem("stop") === "false")
+				{
+
 				count=0;
 				var x=setInterval(function(){
   				var flash_index = new_chars[count];
@@ -80,6 +84,7 @@ $(document).ready(function() {
   				}
   				count++;
 				}, time);
+			}
 			}
 
 			function shuffle(array) {

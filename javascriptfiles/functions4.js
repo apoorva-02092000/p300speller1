@@ -43,7 +43,9 @@ $(document).ready(function() {
 			var flash_time = d_s;			
 			function flash() {
 				
-					
+				if(sessionStorage.getItem("stop") === "false")
+				{
+				
 				if(i<c) {				
 					var flash_index = new_chars[i];
 					requestAnimationFrame(() => {
@@ -89,7 +91,7 @@ $(document).ready(function() {
 					}	
 					
 				
-			
+				}
 				
 			
 			}

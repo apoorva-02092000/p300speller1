@@ -27,7 +27,7 @@
 		<button id="start7" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
 		<button id="start8" class="btn btn-outline-primary dis" style="visibility: hidden">Start</button>
 
-<table>
+<table style="margin-left:250px;">
 		<colgroup>
 			<col class="a7">
 			<col class="a8">
@@ -106,20 +106,20 @@
 	</div>
 	<p class="mt-2">Start Time:<span id="time"></span></p>
 	<p class="d-none ">First Stimulus:<span id="f_s"></span></p>
-	<button class="btn btn-outline-success mt-1" id="showData">Show selected numbers</button>
-	<button class="btn btn-success mt-1 dis" id="showTime">Show time of stimuli</button>
+	<button class="btn btn-outline-success mt-1" id="showData"  style="margin-top: 10px;">Show selected numbers</button>
+	<button class="btn btn-success mt-1 dis" id="showTime" style="margin-top: 10px;">Show time of stimuli</button>
 	<div class="numbers">
 	<p id="data" class="mt showMe"></p>
 	</div>
 	<div class="numbers">
 	<p id="data_time" class="mt showMe"></p>
-	<button onclick="
+	<button  style="margin-top: 10px;" onclick="
 	
 	var backspace=document.getElementById('data').innerHTML;
 	document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1);
 
 	">Back</button>
-	<button
+	<button  style="margin-top: 10px;"
 	 onclick="
 
 	var del = document.getElementById('data');
@@ -129,6 +129,17 @@
 	 "
 	>
 		Delete
+	</button>
+
+	<button  style="margin-top: 10px;"
+	 onclick="
+
+	sessionStorage.setItem('stop', true)
+	console.log('eyes')
+
+	 "
+	>
+		Stop
 	</button>
 
 	</div>

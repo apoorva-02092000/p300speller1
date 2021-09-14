@@ -44,7 +44,8 @@ $(document).ready(function() {
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;
 			function flash() {
-
+				if(sessionStorage.getItem("stop") === "false")
+				{
 
 				if(i<c) {
 					var flash_index = new_chars[i];
@@ -55,7 +56,7 @@ $(document).ready(function() {
 					var s = d.getSeconds();
 					var n = d.getMilliseconds();
 					var timer = m + ":" + s;
-					document.getElementById("timer").innerHTML = timer;
+					//document.getElementById("timer").innerHTML = timer;
 					var mili_s = m*60*1000+1000*s+n;
 					milis.push(mili_s);
 					new_time = (m + "," + s + "," + n);
@@ -91,7 +92,7 @@ $(document).ready(function() {
 					}
 
 
-
+				}
 
 
 			}
@@ -177,7 +178,8 @@ $(document).ready(function() {
 				//selected_numbers += char;				
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
-				}
+				}	
+				console.log("flashing")
 				
 				$("#" + char).css("color", stim_colour);
 

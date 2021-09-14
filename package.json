@@ -12,8 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start":"./node_modules/.bin/netlify-lambda serve src",
-    "build":"./node_modules/.bin/netlify-lambda build src"
+    "test":"hello"
+
   },
   "repository": {
     "type": "git",

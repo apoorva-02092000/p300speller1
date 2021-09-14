@@ -44,55 +44,57 @@ $(document).ready(function() {
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;
 			function flash() {
-
-
-				if(i<c) {
-					var flash_index = new_chars[i];
-					requestAnimationFrame(() => {
-					light_unlit(flash_index,1); // highlight element
-					var d = new Date();
-					var m = d.getMinutes();
-					var s = d.getSeconds();
-					var n = d.getMilliseconds();
-					var timer = m + ":" + s;
-					document.getElementById("timer").innerHTML = timer;
-					var mili_s = m*60*1000+1000*s+n;
-					milis.push(mili_s);
-					new_time = (m + "," + s + "," + n);
-					flashes.push(new_time)
-					})
-					setTimeout(
-						function() {
-							light_unlit(flash_index,0); // revert element to default colour after flash
-							setTimeout(flash,ISI);
+				if(sessionStorage.getItem("stop") === "false"){
+					if(i<c) {
+						var flash_index = new_chars[i];
+						requestAnimationFrame(() => {
+						light_unlit(flash_index,1); // highlight element
+						var d = new Date();
+						var m = d.getMinutes();
+						var s = d.getSeconds();
+						var n = d.getMilliseconds();
+						var timer = m + ":" + s;
+						document.getElementById("timer").innerHTML = timer;
+						var mili_s = m*60*1000+1000*s+n;
+						milis.push(mili_s);
+						new_time = (m + "," + s + "," + n);
+						flashes.push(new_time)
+						})
+						setTimeout(
+							function() {
+								light_unlit(flash_index,0); // revert element to default colour after flash
+								setTimeout(flash,ISI);
+							}
+						,flash_time);
 						}
-					,flash_time);
-					}
-					i++;
-						if(i == c+1 && flashes){
-							console.log(flashes);
+						i++;
+							if(i == c+1 && flashes){
+								console.log(flashes);
+	
+								let milis1 = milis.slice(1, milis.length);
+								console.log(milis1);
+	
+								for(i=0;i<milis1.length;i++){
+								milis1[i] = -milis1[i] + milis1[i+1] - (time) + 99900
+								}
+								console.log(milis1);
+								var total = 0;
+								for(j = 0; j < milis1.length-1; j++) {
+									total += milis1[j];
+								}
+								var avg = total / (milis1.length-1);
+								console.log(avg)
+								flashes.push("Mean Error = " + avg)
+							document.getElementById("data_time").innerHTML = (flashes.slice(1, flashes.length)).join('\r\n');
+							$(".dis").prop('disabled', false);
+						}
+	
+	
+	
+	
+				}
 
-							let milis1 = milis.slice(1, milis.length);
-							console.log(milis1);
-
-							for(i=0;i<milis1.length;i++){
-							milis1[i] = -milis1[i] + milis1[i+1] - (time) + 99900
-							}
-							console.log(milis1);
-							var total = 0;
-							for(j = 0; j < milis1.length-1; j++) {
-							    total += milis1[j];
-							}
-							var avg = total / (milis1.length-1);
-							console.log(avg)
-							flashes.push("Mean Error = " + avg)
-						document.getElementById("data_time").innerHTML = (flashes.slice(1, flashes.length)).join('\r\n');
-						$(".dis").prop('disabled', false);
-					}
-
-
-
-
+		
 
 			}
 			var selected_numbers;

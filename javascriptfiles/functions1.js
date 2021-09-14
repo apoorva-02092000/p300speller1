@@ -12,7 +12,7 @@ $(document).ready(function() {
 			const d_s = 100;
 			const time = d_s + ISI;
 			const n_t = sessionStorage.getItem('number_of_trials');
-
+			
 			
 
 			
@@ -43,34 +43,35 @@ $(document).ready(function() {
 			var firstStimulus = m + ":" + fix_s;
 			document.getElementById("time").innerHTML = startTime;
 			document.getElementById("f_s").innerHTML = firstStimulus;
-			setTimeout(flash,5000);
+			setTimeout(function(){
+				flash()
+			},5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;			
 			function flash() {
-				
-					
-				if(i<c) {				
-					var flash_index = new_chars[i];
-					requestAnimationFrame(() => {
-					light_unlit(flash_index,1); // highlight element
-					var d = new Date();
-					var m = d.getMinutes();
-					var s = d.getSeconds();
-					var n = d.getMilliseconds();
-					var timer = m + ":" + s;
-					document.getElementById("timer").innerHTML = timer;
-					var mili_s = m*60*1000+1000*s+n;
-					milis.push(mili_s);	
-					new_time = (m + "," + s + "," + n);
-					flashes.push(new_time)
-					})									
-					setTimeout(
-						function() {
-							light_unlit(flash_index,0); // revert element to default colour after flash							
-							setTimeout(flash,ISI);
+				if(sessionStorage.getItem("stop") === "false"){
+					if(i<c) {				
+						var flash_index = new_chars[i];
+						requestAnimationFrame(() => {
+						light_unlit(flash_index,1); // highlight element
+						var d = new Date();
+						var m = d.getMinutes();
+						var s = d.getSeconds();
+						var n = d.getMilliseconds();
+						var timer = m + ":" + s;
+						document.getElementById("timer").innerHTML = timer;
+						var mili_s = m*60*1000+1000*s+n;
+						milis.push(mili_s);	
+						new_time = (m + "," + s + "," + n);
+						flashes.push(new_time)
+						})									
+						setTimeout(
+							function() {
+								light_unlit(flash_index,0); // revert element to default colour after flash							
+								setTimeout(flash,ISI);
+							}
+						,flash_time);
 						}
-					,flash_time);
-					}
 					i++;					
 					if(i == c+1 && flashes){
 					for(i=0;i<milis.length-1;i++){
@@ -78,17 +79,18 @@ $(document).ready(function() {
 					}
 					var total = 0;
 					for(j = 0; j < milis.length-1; j++) {
-					    total += milis[j];
+						total += milis[j];
 					}
 					console.log(milis,total)
 					var avg = total / (milis.length-1);
 					flashes.push("Mean Error = " + avg)
-				document.getElementById("data_time").innerHTML = flashes.join('\r\n');
-				$(".dis").prop('disabled', false);
-					}
+					document.getElementById("data_time").innerHTML = flashes.join('\r\n');
+					$(".dis").prop('disabled', false);
+						}
+					
 				
-			
-			
+				
+				}
 			}
 			// recursive function to keep calling setTimeout until all characters have flashed	
 			function light_unlit(char_index,state) {
@@ -111,7 +113,7 @@ $(document).ready(function() {
 				case 9: $(".9").css("color",stim_colour); break;
 				case 10: $(".10").css("color",stim_colour); break;
 				case 11: $(".11").css("color",stim_colour); break;
-				case 12: $(".12").css("color",stim_colour); break'
+				case 12: $(".12").css("color",stim_colour); break;
 			
 				default: 
 				}
