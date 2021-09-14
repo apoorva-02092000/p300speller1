@@ -48,6 +48,7 @@ $(document).ready(function() {
 				{
 
 				if(i<c) {
+					console.log(i)
 					var flash_index = new_chars[i];
 					requestAnimationFrame(() => {
 					light_unlit(flash_index,1); // highlight element
@@ -169,19 +170,30 @@ $(document).ready(function() {
 					case 58: char = "७"; break;
 					case 59: char = "८"; break;
 					case 60: char = "९"; break;
-					case 61: char = "#"; break;
-					case 62: char = "|"; break;
-					case 63: char = "?"; break;
-					case 64: char = ":"; break;
-					case 64: char = ":"; break;
+					case 61: char = "hash"; break;
+					case 62: char = "line"; break;
+					case 63: char = "ques"; break;
+					case 64: char = "colon"; break;
+					case 64: char = "colon"; break;
 				}
 				//selected_numbers += char;				
+
+				$("#" + char).css("color", stim_colour);
+				if(char === "hash"){
+					char = "#"
+				}
+				if(char === "line"){
+					char = "|"
+				}
+				if(char === "ques"){
+					char = "?"
+				}
+				if(char == "colon"){
+					char = ":"
+				}
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}	
-				console.log("flashing")
-				
-				$("#" + char).css("color", stim_colour);
 
 			}
 
