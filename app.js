@@ -1,8 +1,6 @@
 const express = require('express'); //USING EXPRESS SERVER,THE SERVER USED FOR NODE.JS
 const session=require('express-session');
 
-const session=require('express-session');
-
 const app = express();
 
 
