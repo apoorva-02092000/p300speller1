@@ -21,7 +21,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-				document.getElementById("data").innerHTML = new_chars;
+				//document.getElementById("data").innerHTML = new_chars;
 				}
 			}
 						
