@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$("#start2").click(
 		function() {
 
-			console.log("IN second protocol");
+			
 			$(".dis").prop('disabled', true);
 			var flashes = [];
 			var milis = [];
@@ -14,16 +14,16 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
-			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,27,39,41,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
+			var all_chars = [1,2,3,4];
+			new_chars =  [1,3,2,4];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
+				temp_chars =  [1,3,2,4];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(37);
-					//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
+					new_chars.unshift(5);
+					document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
 
@@ -107,79 +107,43 @@ $(document).ready(function() {
 				} else {
 					stim_colour = s_color;
 				}
+				
+		  
 				var char;
+				var canvas = document.getElementById("draw")
+
+				var ctx = canvas.getContext("2d")
+				ctx.getTransform = function(){ return xform; };
+
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight; 
 				
 				switch(char_index){
-					case 1: char = "A"; break;
-					case 2: char = "B"; break;
-					case 3: char = "C"; break;
-					case 4: char = "D"; break;
-					case 5: char = "E"; break;
-					case 6: char = "F"; break;
-					case 7: char = "G"; break;
-					case 8: char = "H"; break;
-					case 9: char = "I"; break;
-					case 10: char = "J"; break;
-					case 11: char = "K"; break;
-					case 12: char = "L"; break;
-					case 13: char = "M"; break;
-					case 14: char = "N"; break;
-					case 15: char = "O"; break;
-					case 16: char = "P"; break;
-					case 17: char = "Q"; break;
-					case 18: char = "R"; break;
-					case 19: char = "S"; break;
-					case 20: char = "T"; break;
-					case 21: char = "U"; break;
-					case 22: char = "V"; break;
-					case 23: char = "W"; break;
-					case 24: char = "X"; break;
-					case 25: char = "Y"; break;
-					case 26: char = "Z"; break;
-					case 27: char = "0"; break;
-					case 28: char = "1"; break;
-					case 29: char = "2"; break;
-					case 30: char = "3"; break;
-					case 31: char = "4"; break;
-					case 32: char = "5"; break;
-					case 33: char = "6"; break;
-					case 34: char = "7"; break;
-					case 35: char = "8"; break;
-					case 36: char = "9"; break;
-					case 37: char = "qm"; break;
-					case 38: char = "da"; break;
-					case 39: char = "do"; break;
-					case 40: char = "bk"; var backspace=document.getElementById('data').innerHTML;
-					document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1); break;
-					case 41: char = "dl"; 	var del = document.getElementById('data');
-					del.remove();break;
-					case 42: char = "sp";	sessionStorage.setItem('stop', true)
+					case 1: char = "A"; 
+					ctx.beginPath();
+					ctx.rect(20, 20, 150, 100);
+					ctx.fillStyle = "red";
+					ctx.fill();
 					break;
-
-
-					
+					case 2: char = "B";
+					ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "blue";
+					ctx.fill(); 
+					break;
+					case 3: char = "G";ctx.beginPath();
+					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+					ctx.stroke();
+					 break;
+					case 4: char = "H";
+					ctx.beginPath();
+					ctx.rect(20, 20, 150, 100);
+					ctx.stroke();
+					 break;
 
 				}
 				//selected_numbers += char;
 				$("#" + char).css("color", stim_colour);
-				if(char === "qm"){
-					char = "?"
-				}
-				if(char === "da"){
-					char = "-"
-				}
-				if(char === "do"){
-					char = "."
-				}
-				if(char == "bk"){
-					char = ""
-				}
-				if(char == "dl"){
-					char = ""
-				}
-				if(char == "sp"){
-					char = ""
-				}
 
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;

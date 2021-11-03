@@ -36,7 +36,9 @@ app.get('/', (req, res) => {
 app.get('/devanagri', (req, res) => {
  res.render('devanagri');
 });
-
+app.get('/test', (req, res) => {
+  res.render('test')
+})
 app.get('/english', (req, res) => {
 
   var dataToSend;//
