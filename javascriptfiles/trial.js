@@ -14,15 +14,15 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4];
-			new_chars =  [1,3,2,4];
+			var all_chars = [1,2,3,4,5,6,7,8];
+			new_chars =  [1,3,5,7,2,4,6,8];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,2,4];
+				temp_chars =  [1,3,5,7,2,4,6,8];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(5);
+					new_chars.unshift(9);
 					document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -131,15 +131,40 @@ $(document).ready(function() {
 					ctx.fillStyle = "blue";
 					ctx.fill(); 
 					break;
-					case 3: char = "G";ctx.beginPath();
+					case 3:char="C";
+					ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "Green";
+					ctx.fill(); 
+					break;
+					case 4:char="D";
+					ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "Yellow";
+					ctx.fill(); 
+					break;
+					case 5: char = "E";ctx.beginPath();
 					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
 					ctx.stroke();
 					 break;
-					case 4: char = "H";
+					case 6: char = "F";
 					ctx.beginPath();
 					ctx.rect(20, 20, 150, 100);
 					ctx.stroke();
 					 break;
+					 case 7: char = "G";
+					ctx.beginPath();
+					ctx.moveTo(75,50);
+					ctx.lineTo(100,75);
+					ctx.lineTo(100,25);
+					ctx.fill();
+					break;
+					case 8: char = "G";
+					ctx.rect(350,50,100,100);
+					ctx.stroke();
+					break;
+					
+
 
 				}
 				//selected_numbers += char;
