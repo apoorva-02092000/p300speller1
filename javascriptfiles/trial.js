@@ -119,50 +119,53 @@ $(document).ready(function() {
 				canvas.height = window.innerHeight; 
 				
 				switch(char_index){
-					case 1: char = "A"; 
+					case 1: char = "A";
 					ctx.beginPath();
-					ctx.rect(20, 20, 150, 100);
-					ctx.fillStyle = "red";
-					ctx.fill();
-					break;
-					case 2: char = "B";
-					ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "blue";
-					ctx.fill(); 
-					break;
-					case 3:char="C";
-					ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "Green";
-					ctx.fill(); 
-					break;
-					case 4:char="D";
-					ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "Yellow";
-					ctx.fill(); 
-					break;
-					case 5: char = "E";ctx.beginPath();
 					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
 					ctx.stroke();
-					 break;
-					case 6: char = "F";
+					break;					
+					case 2: char = "B";
 					ctx.beginPath();
 					ctx.rect(20, 20, 150, 100);
 					ctx.stroke();
 					 break;
-					 case 7: char = "G";
+					case 3:char="C";
 					ctx.beginPath();
 					ctx.moveTo(75,50);
 					ctx.lineTo(100,75);
 					ctx.lineTo(100,25);
 					ctx.fill();
-					break;
-					case 8: char = "G";
+					break;					
+					case 4:char="D";
 					ctx.rect(350,50,100,100);
 					ctx.stroke();
 					break;
+					case 5: 
+					ctx.beginPath();
+					ctx.rect(20, 20, 150, 100);
+					ctx.fillStyle = "red";
+					ctx.fill();
+					break;
+					case 6: char = "F";
+					ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "blue";
+					ctx.fill(); 
+					break;
+					 case 7: char = "G";
+					 ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "Green";
+					ctx.fill(); 
+					break;
+					case 8: char = "H";
+					ctx.beginPath();
+					ctx.rect(40, 40, 150, 100);
+					ctx.fillStyle = "Yellow";
+					ctx.fill(); 
+					break;
+
+					
 					
 
 

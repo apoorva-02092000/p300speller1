@@ -152,7 +152,8 @@ $(document).ready(function() {
 					case 40: char = "bk"; var backspace=document.getElementById('data').innerHTML;
 					document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1); break;
 					case 41: char = "dl"; 	var del = document.getElementById('data');
-					del.remove();break;
+					del.remove();
+					break;
 					case 42: char = "sp";	sessionStorage.setItem('stop', true)
 					break;
 
