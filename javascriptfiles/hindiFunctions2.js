@@ -14,15 +14,15 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64];
-			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72];
+			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64];
+				temp_chars = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(65);
+					new_chars.unshift(73);
 					//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -174,7 +174,19 @@ $(document).ready(function() {
 					case 62: char = "line"; break;
 					case 63: char = "ques"; break;
 					case 64: char = "colon"; break;
-					case 64: char = "colon"; break;
+					case 65: char = "comma"; break;
+					case 66: char = "period"; break;
+					case 67: char = "exclaim"; break;
+					case 68: char = "percent"; break;
+					case 69: char="semicolon";break;
+					case 70: char = "bk"; var backspace=document.getElementById('data').innerHTML;
+					if(state==1)
+					document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1); break;
+					case 71: char = "dl"; 	var del = document.getElementById('data');
+					del.innerHTML = "";
+					break;
+					case 72: char = "sp";	sessionStorage.setItem('stop', true)
+					break;
 				}
 				//selected_numbers += char;				
 
@@ -191,6 +203,32 @@ $(document).ready(function() {
 				if(char == "colon"){
 					char = ":"
 				}
+				if(char=="comma")
+				{
+					char=",";
+				}
+				if(char=="period")
+				{
+					char=".";
+				}
+				if(char=="exclaim")
+				{
+					char="!";
+				}
+				if(char=="semicolon")
+				{
+					char=";";
+				}
+				if(char=="percent")
+				{
+					char="%";
+				}
+				
+				
+				
+				
+				
+				
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}	

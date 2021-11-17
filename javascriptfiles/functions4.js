@@ -12,7 +12,7 @@ $(document).ready(function() {
 			const n_t = sessionStorage.getItem('number_of_trials');
 			number_of_trials = n_t;
 			
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 			
@@ -20,7 +20,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(37);
+					new_chars.unshift(43);
 				//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -144,10 +144,41 @@ $(document).ready(function() {
 					case 34: char = "7"; break;
 					case 35: char = "8"; break;
 					case 36: char = "9"; break;
-					case 37: char = "9"; break;
+					case 37: char = "qm"; break;
+					case 38: char = "da"; break;
+					case 39: char = "do"; break;
+					case 40: char = "bk"; var backspace=document.getElementById('data').innerHTML;
+					if(state==1)
+					document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1); break;
+					case 41: char = "dl"; 	var del = document.getElementById('data');
+					del.innerHTML = "";
+					break;
+					case 42: char = "sp";	sessionStorage.setItem('stop', true)
+					break;
 
 				}
 				$("#"+ char).css("color", stim_colour);
+
+				if(char === "qm"){
+					char = "?"
+				}
+				if(char === "da"){
+					char = "-"
+				}
+				if(char === "do"){
+					char = "."
+				}
+				if(char == "bk"){
+					char = ""
+				}
+				if(char == "dl"){
+					char = ""
+				}
+				if(char == "sp"){
+					char = ""
+				}
+
+
 				if(state == 1){
 					document.getElementById("data").innerHTML += char;
 				}

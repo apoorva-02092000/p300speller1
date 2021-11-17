@@ -28,7 +28,7 @@
 
 	<div class="col-md-6 col-sm-12">
 	<div class="n_t">
-	<label for="trials">Enter the number of trials, please!</label>
+	<label for="trials" style="font-size: larger; font-family: cursive; color:black; font-size: 20px;">Enter the number of trials, please!</label>
 	<select name="select" id="number_of_trials">
 	<option value="2">2</option>
 	<option value="5">5</option>
@@ -52,7 +52,7 @@
 	</select>
 	</div>
 	<div class="d_s">
-	<label for="trials">Choose the value of stimulation frequency, please!</label>
+	<label for="trials" style="font-size: larger; font-family: cursive; color:black; font-size: 19px;">Choose the value of stimulation frequency, please!</label>
 	<select name="select" id="duration_of_stimulus">
 	<option value="980">1 Hz</option>
 	<option value="480">2 Hz</option>
@@ -63,7 +63,7 @@
 
 	</div>
 	<div class="d_s">
-	<label for="trials">Choose the color of stimulus, please!</label>
+	<label for="trials" style="font-size: larger; font-family: cursive; color:black; font-size: 20px;">Choose the color of stimulus, please!</label>
 	<select name="select" id="s-color">
 	<option value="blue">blue</option>
 	<option value="white" selected>white</option>
@@ -73,26 +73,26 @@
 	</select>
 	</div>
 	<div class="b_s">
-		<button class="btn btn-outline-primary dis" onclick="firstProtocol = true">First Protocol</button>
-		<button class="btn btn-primary dis" onclick="secondProtocol = true">Second Protocol</button>
-	<div class="mt">For random order flashing of rows/columns or letters  use the protocols below</div>
+		<button class="btn btn-outline-primary dis" onclick="firstProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">First Protocol</button>
+		<button class="btn btn-primary dis" onclick="secondProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Second Protocol</button>
+	<div class="mt" style="font-size: larger; font-family: cursive; color:black; font-size: 20px;">For random order flashing of rows/columns or letters  use the protocols below</div>
 	<div class="mt">
-		<button class="btn btn-outline-primary dis" onclick="thirdProtocol = true">Third Protocol</button>
-		<button class="btn btn-primary dis" onclick="fourthProtocol = true">Fourth Protocol</button>
+		<button class="btn btn-outline-primary dis" onclick="thirdProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Third Protocol</button>
+		<button class="btn btn-primary dis" onclick="fourthProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Fourth Protocol</button>
 	</div>
-	<div class="mt">For background flashing of rows/columns or letters use the protocols below</div>
+	<div class="mt" style="font-size: larger; font-family: cursive; color:black; font-size: 20px; ">For background flashing of rows/columns or letters use the protocols below</div>
 	<div class="mt">
-		<button class="btn btn-outline-primary dis" onclick="fifthProtocol = true">fifth Protocol</button>
-		<button class="btn btn-primary dis" onclick="sixthProtocol = true">sixth Protocol</button>
+		<button class="btn btn-outline-primary dis" onclick="fifthProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">fifth Protocol</button>
+		<button class="btn btn-primary dis" onclick="sixthProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">sixth Protocol</button>
 	</div>
 	<div class="mt">
-		<button class="btn btn-outline-primary dis" onclick="seventhProtocol = true">seventh Protocol</button>
-		<button class="btn btn-primary dis" onclick="eighthProtocol = true">eighth Protocol</button>
+		<button class="btn btn-outline-primary dis" onclick="seventhProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">seventh Protocol</button>
+		<button class="btn btn-primary dis" onclick="eighthProtocol = true" style="color: black;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">eighth Protocol</button>
 	</div>
 		
 
 
-		<button class="btn btn-outline-success mt-2" id="showDoc">Show documentation</button>
+		<button class="btn btn-outline-success mt-2" id="showDoc" >Show documentation</button>
 		<div class="numbers">
 		<div id="doc" class="mt showMe">
 		<ul>For the first, third, fifth and seventh protocols ...
@@ -118,7 +118,7 @@
 
 		<div>
 			<!-- <a href="/english">Go to matrix</a> -->
-			<button  style="margin-top: 20px;" onclick="
+			<button   style="margin-top: 20px;  background-color: transparent;box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); cursor: pointer; width:300px;height: 80px; font-size: 30px; font-family: fantasy;" onclick="
 				sessionStorage.setItem('number_of_trials', $('#number_of_trials').val());
 				console.log($('#duration_of_stimulus').val());
 				sessionStorage.setItem('duration_of_stimulus',$('#duration_of_stimulus').val());
@@ -138,7 +138,7 @@
 
 		<div>
 			<!-- <a href="/english">Go to matrix</a> -->
-			<button  style="margin-top: 10px;" onclick="
+			<button   style="margin-top: 10px;  background-color: transparent;box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); cursor: pointer; width:300px;height: 80px; font-size: 30px; font-family: fantasy;" onclick="
 				sessionStorage.setItem('number_of_trials', $('#number_of_trials').val());
 				console.log($('#duration_of_stimulus').val());
 				sessionStorage.setItem('duration_of_stimulus',$('#duration_of_stimulus').val());
@@ -155,6 +155,20 @@
 				window.open('/devanagri', '_self');
 			">Go To Hindi Matrix</button>
 		</div>
+
+		<div>
+			<!-- <a href="/english">Go to matrix</a> -->
+			<button   style="margin-top: 10px;  background-color: transparent;box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); cursor: pointer; width:300px;height: 80px; font-size: 30px; font-family: fantasy;" onclick="
+				sessionStorage.setItem('number_of_trials', $('#number_of_trials').val());
+				console.log($('#duration_of_stimulus').val());
+				sessionStorage.setItem('duration_of_stimulus',$('#duration_of_stimulus').val());
+				sessionStorage.setItem('s-color',  $('#s-color').val());
+
+				window.open('/test', '_self');
+			">Go To Painting Matrix</button>
+		</div>
+
+		
 
 
 
@@ -179,4 +193,15 @@
 
 
 	</body>
+	<style>
+		body {
+		  background-image: url('/img/brain.jpg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		  background-position: right;
+		}
+		
+
+		</style>
 </html>

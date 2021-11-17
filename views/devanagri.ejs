@@ -123,6 +123,16 @@
 			<td class="12 7 60" id="colon">:</td>
 		</tr>
 
+		<tr class="a8">
+			<td class="5 7 59" id="colon">:</td>
+			<td class="6 7 60" id="period">.</td>
+			<td class="7 7 61" id="exclaim">!</td>
+			<td class="8 7 62" id="percent">%</td>
+			<td class="9 7 63" id="semicolon">;</td>
+			<td class="10 7 64" id="bk"><img src="/img/back.png" height="100" width="100"></td>
+			<td class="11 7 65" id="dl"><img src="/img/delete.png" height="100" width="100"></td>
+			<td class="12 7 60" id="sp"><img src="/img/stop.png" height="100" width="100"></td>
+		</tr>
 
 
 
@@ -144,34 +154,9 @@
 		</div>
 		<div class="numbers">
 		<p id="data_time" class="mt showMe"></p>
-		<button  style="margin-top: 10px;" onclick="
+		
+
 	
-		var backspace=document.getElementById('data').innerHTML;
-		document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1);
-
-		">Back</button>
-		<button  style="margin-top: 10px;"
-		onclick="
-
-		var del = document.getElementById('data');
-		del.remove();
-
-
-		"
-		>
-			Delete
-		</button>
-
-		<button  style="margin-top: 10px;"
-	 onclick="
-
-	sessionStorage.setItem('stop', true)
-	console.log('eyes')
-
-	 "
-	>
-		Stop
-	</button>
 
 		</div>
 
@@ -231,4 +216,16 @@
 	  	
 
 	</body>
+
+	<style>
+		body {
+		  background-image: url('/img/brain2.jpg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		  background-position: right;
+		}
+		
+	
+		</style>
 </html>

@@ -66,7 +66,7 @@
 		</tr>
 		
 		<tr class="a4">
-			<td class="5 4 29" id="S">S,</td>
+			<td class="5 4 29" id="S">S</td>
 			<td class="6 4 30" id="T">T</td>
 			<td class="7 4 31" id="U">U</td>
 			<td class="8 4 32" id="V">V</td>
@@ -99,7 +99,7 @@
 			<td class="7 8 48" id="do">.</td>
 			<td class="8 8 49" id="bk"><img src="/img/back.png" height="100" width="100"></td>
 			<td class="9 8 50" id="dl"><img src="/img/delete.png" height="100" width="100"></td>
-			<td class="5 8 51" id="sp"><img src="/img/stop.jpg" height="100" width="100"></td>
+			<td class="5 8 51" id="sp"><img src="/img/stop.png" height="100" width="100"></td>
 			
 		</tr>
 		
@@ -118,38 +118,9 @@
 	</div>
 	<div class="numbers">
 	<p id="data_time" class="mt showMe"></p>
-	<button  style="margin-top: 10px;" onclick="
 	
-	var backspace=document.getElementById('data').innerHTML;
-	document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1);
-
-	">Back</button>
-	<button  style="margin-top: 10px;"
-	 onclick="
-
-	var del = document.getElementById('data');
-  	del.remove();
-
-
-	 "
-	>
-		Delete
-	</button>
-
-	<button  style="margin-top: 10px;"
-	 onclick="
-
-	sessionStorage.setItem('stop', true)
-	console.log('eyes')
-
-	 "
-	>
-		Stop
-	</button>
 
 	</div>
-
-	<p>test <%= data%></p>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -170,32 +141,36 @@
 		$(document).ready(function(){
 			if(sessionStorage.getItem("firstProtocol") == "true"){
 				document.getElementById("start1").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("secondProtocol") == "true"){
 				document.getElementById("start2").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("thirdProtocol") == "true"){
 				document.getElementById("start3").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("fourthProtocol") == "true"){
 				document.getElementById("start4").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("fifthProtocol") == "true"){
 				document.getElementById("start5").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("sixthProtocol") == "true"){
 				document.getElementById("start6").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("seventhProtocol") == "true"){
 				document.getElementById("start7").style.visibility = "visible";
-
 			}else if(sessionStorage.getItem("eighthProtocol") == "true"){
 				console.log("yo")
 				document.getElementById("start8").style.visibility = "visible";
-
 			}
 		})
 </script>
 
 </body>
+
+<style>
+	body {
+	  background-image: url('/img/brain3.jpg');
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: cover;
+	  background-position: right;
+	}
+	
+
+	</style>
 </html>

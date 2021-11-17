@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
 			new_chars = shuffle(all_chars);
 			number_of_trials--;
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
 				temp_chars = shuffle(all_chars);
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(37);
+					new_chars.unshift(43);
 					document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}

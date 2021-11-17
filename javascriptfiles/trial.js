@@ -1,4 +1,15 @@
+
+var lastShape = ""
+		
 $(document).ready(function() {
+	var canvas = document.getElementById("draw")
+
+	var ctxX = 0
+	var ctxY = 0
+			
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight; 
+var ctx = canvas.getContext("2d")
 	$("#start2").click(
 		function() {
 
@@ -15,11 +26,15 @@ $(document).ready(function() {
 			number_of_trials = n_t;
 
 			var all_chars = [1,2,3,4,5,6,7,8];
-			new_chars =  [1,3,5,7,2,4,6,8];
+			new_chars =  [10,4, 5,2, 11, 9, 5, 3, 6, , 12, 8,2,6, 9,4, 7,1,7, 5, , 10,8,2,5];
+			//new_chars=[1,3,5,7,2,4,6,8,9,10,11,12];
+		
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,2,4,6,8];
+				temp_chars= [1,4, 5, 10, 2, 5, 3, 12, 6, 8,2,6,4, 7,1, 9, 11,7, 5, 8,2,12,,5];
+				//temp_chars =  [1,3,5,7,9,11,2,4,6,8,10,12]
+				
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
 					new_chars.unshift(9);
@@ -35,11 +50,11 @@ $(document).ready(function() {
 			var m = d.getMinutes();
 			var s = d.getSeconds();
 			var n = d.getMilliseconds();
-			var startTime = h + ":" + m + ":" + s + " -- " + "you choosed the second protocol";;
+			var startTime = h + ":" + m + ":" + s + " -- " + "you chose the second protocol";;
 			var fix_s = s+5;
 			var firstStimulus = m + ":" + fix_s;
-			document.getElementById("time").innerHTML = startTime;
-			document.getElementById("f_s").innerHTML = firstStimulus;
+			// document.getElementById("time").innerHTML = startTime;
+			// document.getElementById("f_s").innerHTML = firstStimulus;
 			setTimeout(flash,5000);
 			// 2 second pause before stimulus presentation starts
 			var flash_time = d_s;
@@ -48,13 +63,14 @@ $(document).ready(function() {
 					if(i<c) {
 						var flash_index = new_chars[i];
 						requestAnimationFrame(() => {
+							console.log(flash_index)
 						light_unlit(flash_index,1); // highlight element
 						var d = new Date();
 						var m = d.getMinutes();
 						var s = d.getSeconds();
 						var n = d.getMilliseconds();
 						var timer = m + ":" + s;
-						document.getElementById("timer").innerHTML = timer;
+						//document.getElementById("timer").innerHTML = timer;
 						var mili_s = m*60*1000+1000*s+n;
 						milis.push(mili_s);
 						new_time = (m + "," + s + "," + n);
@@ -85,7 +101,7 @@ $(document).ready(function() {
 								var avg = total / (milis1.length-1);
 								console.log(avg)
 								flashes.push("Mean Error = " + avg)
-							document.getElementById("data_time").innerHTML = (flashes.slice(1, flashes.length)).join('\r\n');
+							//ocument.getElementById("data_time").innerHTML = (flashes.slice(1, flashes.length)).join('\r\n');
 							$(".dis").prop('disabled', false);
 						}
 	
@@ -108,66 +124,63 @@ $(document).ready(function() {
 					stim_colour = s_color;
 				}
 				
-		  
 				var char;
-				var canvas = document.getElementById("draw")
-
-				var ctx = canvas.getContext("2d")
-				ctx.getTransform = function(){ return xform; };
-
-				canvas.width = window.innerWidth;
-				canvas.height = window.innerHeight; 
-				
+				//console.log(char_index)
 				switch(char_index){
 					case 1: char = "A";
-					ctx.beginPath();
-					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-					ctx.stroke();
+					//draw("circle", "black")
+					lastShape = "circle"
+					//console.log(lastShape)
 					break;					
 					case 2: char = "B";
-					ctx.beginPath();
-					ctx.rect(20, 20, 150, 100);
-					ctx.stroke();
+					//draw("rectangle", "black")
+					lastShape = "rectangle"
+					//console.log(lastShape)
 					 break;
 					case 3:char="C";
-					ctx.beginPath();
-					ctx.moveTo(75,50);
-					ctx.lineTo(100,75);
-					ctx.lineTo(100,25);
-					ctx.fill();
+					//draw("triangle", "black")
+					lastShape = "triangle"
+					//console.log(lastShape)
 					break;					
-					case 4:char="D";
-					ctx.rect(350,50,100,100);
-					ctx.stroke();
-					break;
+					case 4:
+						char="D";
+						//draw("square", "black")
+						lastShape = "square"
+						//console.log(lastShape)
+						break;
 					case 5: 
-					ctx.beginPath();
-					ctx.rect(20, 20, 150, 100);
-					ctx.fillStyle = "red";
-					ctx.fill();
+						char = "E"
+						draw(lastShape, "red")
+						//console.log(lastShape)
 					break;
 					case 6: char = "F";
-					ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "blue";
-					ctx.fill(); 
+					draw(lastShape, "blue")
+					//console.log(lastShape)
 					break;
 					 case 7: char = "G";
-					 ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "Green";
-					ctx.fill(); 
+					draw(lastShape, "green")
+					//console.log(lastShape)
 					break;
 					case 8: char = "H";
-					ctx.beginPath();
-					ctx.rect(40, 40, 150, 100);
-					ctx.fillStyle = "Yellow";
-					ctx.fill(); 
+					draw(lastShape, "yellow")
+					//console.log(lastShape)
 					break;
-
-					
-					
-
+					case 9:
+						char = "I"
+						ctxY += 100
+						break;
+					case 10:
+						char = "J"
+						ctxY -= 100
+						break;
+					case 11:
+						char = "K"
+						ctxX -= 100
+						break;
+					case 12:
+						char = "L"
+						ctxX += 100
+						break;
 
 				}
 				//selected_numbers += char;
@@ -178,6 +191,43 @@ $(document).ready(function() {
 				}
 				
 
+			}
+
+			function draw(shape, color){
+
+				ctx.getTransform = function(){ return xform; };
+				ctx.moveTo(ctxX, ctxY)
+
+				if(shape == "circle"){
+					ctx.beginPath();
+//					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+					ctx.arc(ctxX, ctxY, 40, 0, 2 * Math.PI);
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+
+				}else if(shape == "triangle"){
+					ctx.beginPath();
+					// ctx.moveTo(175,50);
+					// ctx.lineTo(200,75);
+					// ctx.lineTo(200,25);
+					ctx.moveTo(ctxX, ctxY);
+					ctx.lineTo(ctxX + 25,ctxY + 25);
+					ctx.lineTo(ctxX + 25,ctxY - 25);
+					ctx.fillStyle = color
+					ctx.fill()
+				}else if(shape == "rectangle"){
+					ctx.beginPath();
+					ctx.rect(ctxX, ctxY, 150, 100);
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.closePath()
+				}else if(shape == "square"){
+					ctx.rect(ctxX,ctxY,100,100);
+					ctx.fillStyle = color
+					ctx.fill()
+				}
 			}
 
 			function shuffle(array) {

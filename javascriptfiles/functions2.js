@@ -15,14 +15,14 @@ $(document).ready(function() {
 			number_of_trials = n_t;
 
 			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
-			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,27,39,41,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
+			new_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars =  [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
+				temp_chars =   [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(37);
+					new_chars.unshift(43);
 					//document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -150,9 +150,10 @@ $(document).ready(function() {
 					case 38: char = "da"; break;
 					case 39: char = "do"; break;
 					case 40: char = "bk"; var backspace=document.getElementById('data').innerHTML;
+					if(state==1)
 					document.getElementById('data').innerHTML=backspace.substring(0,backspace.length -1); break;
 					case 41: char = "dl"; 	var del = document.getElementById('data');
-					del.remove();
+					del.innerHTML = "";
 					break;
 					case 42: char = "sp";	sessionStorage.setItem('stop', true)
 					break;
