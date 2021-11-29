@@ -11,7 +11,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight; 
 var ctx = canvas.getContext("2d")
 	$("#start2").click(
-		function() {
+		async function() {
 
 			
 			$(".dis").prop('disabled', true);
@@ -25,19 +25,19 @@ var ctx = canvas.getContext("2d")
 
 			number_of_trials = n_t;
 
-			var all_chars = [1,2,3,4,5,6,7,8];
-			new_chars =  [10,4, 5,2, 11, 9, 5, 3, 6, , 12, 8,2,6, 9,4, 7,1,7, 5, , 10,8,2,5];
-			//new_chars=[1,3,5,7,2,4,6,8,9,10,11,12];
-		
+			var all_chars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+			//new_chars = [10,12,1,6,12,2,5,13];
+			//new_chars= [10,4, 5,2, 11, 9, 5, 3, 6, , 12, 8,2,6, 9,4, 7,1,7, 5, , 10,8,2,5];
+			new_chars=[10,12,1,6,12,2,5,13];
 			number_of_trials--;
 
 			for(a=0; a<number_of_trials; a++) {
-				temp_chars= [1,4, 5, 10, 2, 5, 3, 12, 6, 8,2,6,4, 7,1, 9, 11,7, 5, 8,2,12,,5];
-				//temp_chars =  [1,3,5,7,9,11,2,4,6,8,10,12]
-				
+				//temp_chars=[10,12,1,6,12,2,5,13];
+				//temp_chars =[1,4, 5, 10, 2, 5, 3, 12, 6, 8,2,6,4, 7,1, 9, 11,7, 5, 8,2,12,,5];
+				temp_chars= [10,12,1,6,12,2,5,13];
 				new_chars = new_chars.concat(temp_chars);
 				if(a == number_of_trials-1){
-					new_chars.unshift(9);
+					new_chars.unshift(15);
 					document.getElementById("data").innerHTML = new_chars.slice(1, new_chars.length);
 				}
 			}
@@ -150,28 +150,32 @@ var ctx = canvas.getContext("2d")
 						break;
 					case 5: 
 						char = "E"
+						color="red"
 						draw(lastShape, "red")
 						//console.log(lastShape)
 					break;
 					case 6: char = "F";
+					color="blue"
 					draw(lastShape, "blue")
 					//console.log(lastShape)
 					break;
 					 case 7: char = "G";
+					 color="green"
 					draw(lastShape, "green")
 					//console.log(lastShape)
 					break;
 					case 8: char = "H";
+					color="yellow"
 					draw(lastShape, "yellow")
 					//console.log(lastShape)
 					break;
 					case 9:
 						char = "I"
-						ctxY += 100
+						ctxY -= 100
 						break;
 					case 10:
 						char = "J"
-						ctxY -= 100
+						ctxY += 100
 						break;
 					case 11:
 						char = "K"
@@ -180,6 +184,20 @@ var ctx = canvas.getContext("2d")
 					case 12:
 						char = "L"
 						ctxX += 100
+						break;
+					case 13:
+						char="M"
+						zoom(lastShape,color);
+						break;
+					case 14:
+						char="N"
+						unzoom(lastShape,color);
+						break;
+					case 15:
+						char="O"
+						break;
+					case 16:
+						char="P"
 						break;
 
 				}
@@ -200,7 +218,6 @@ var ctx = canvas.getContext("2d")
 
 				if(shape == "circle"){
 					ctx.beginPath();
-//					ctx.arc(95, 50, 40, 0, 2 * Math.PI);
 					ctx.arc(ctxX, ctxY, 40, 0, 2 * Math.PI);
 					ctx.stroke();
 					ctx.fillStyle = color
@@ -208,17 +225,17 @@ var ctx = canvas.getContext("2d")
 
 				}else if(shape == "triangle"){
 					ctx.beginPath();
-					// ctx.moveTo(175,50);
-					// ctx.lineTo(200,75);
-					// ctx.lineTo(200,25);
 					ctx.moveTo(ctxX, ctxY);
 					ctx.lineTo(ctxX + 25,ctxY + 25);
 					ctx.lineTo(ctxX + 25,ctxY - 25);
 					ctx.fillStyle = color
 					ctx.fill()
+
 				}else if(shape == "rectangle"){
 					ctx.beginPath();
 					ctx.rect(ctxX, ctxY, 150, 100);
+					console.log("ctxX in drw",ctxX)
+					console.log("ctxY in draw",ctxY)
 					ctx.stroke();
 					ctx.fillStyle = color
 					ctx.fill()
@@ -229,7 +246,99 @@ var ctx = canvas.getContext("2d")
 					ctx.fill()
 				}
 			}
+			
 
+			 function zoom(lastshape,color)
+			{
+				ctx.getTransform = function(){ return xform; };
+				//ctx.moveTo(ctxX, ctxY)
+
+				if(lastShape=="rectangle")
+				{
+					
+					ctx.moveTo(ctxX, ctxY)
+					ctx.beginPath();
+					ctx.rect(ctxX, ctxY, 150, 100);
+					console.log("ctxX in zoom",ctxX)
+					console.log("ctxY in zoom",ctxY)
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(2, 2);
+
+				}
+				else if(lastShape=="circle")
+				{
+					ctx.beginPath();
+					ctx.arc(ctxX/2, ctxY/2, 40, 0, 2 * Math.PI);
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(2,2);
+				}
+				else if(lastShape=="square")
+				{
+					ctx.rect(ctxX,ctxY,100,100);
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(2,2)
+				}
+				else if(lastShape=="triangle")
+				{
+					ctx.beginPath();
+					ctx.moveTo(ctxX, ctxY);
+					ctx.lineTo(ctxX + 25,ctxY + 25);
+					ctx.lineTo(ctxX + 25,ctxY - 25);
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(2,2)
+				}
+				
+			}
+			function unzoom(lastshape,color)
+			{
+				ctx.getTransform = function(){ return xform; };
+				ctx.moveTo(ctxX, ctxY)
+
+				if(lastShape=="rectangle")
+				{
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					ctx.beginPath();
+					ctx.rect(ctxX, ctxY, 150, 100);
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+				    ctx.scale(0.5,0.5);
+				}
+				else if(lastShape=="circle")
+				{
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					ctx.beginPath();
+					ctx.arc(ctxX, ctxY, 40, 0, 2 * Math.PI);
+					ctx.stroke();
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(0.5,0.5);
+				}
+				else if(lastShape=="square")
+				{
+					ctx.rect(ctxX,ctxY,100,100);
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(0.5,0.5)
+				}
+				else if(lastShape=="triangle")
+				{
+					ctx.beginPath();
+					ctx.moveTo(ctxX, ctxY);
+					ctx.lineTo(ctxX + 25,ctxY + 25);
+					ctx.lineTo(ctxX + 25,ctxY - 25);
+					ctx.fillStyle = color
+					ctx.fill()
+					ctx.scale(0.5,0.5)
+				}
+				
+			}
 			function shuffle(array) {
 				var currentIndex = array.length, temporaryValue, randomIndex;
 
